@@ -8712,7 +8712,7 @@ input {
   
   .flex-outer li input:not([type='checkbox']),
   .flex-outer li textarea {
-    padding: 10px;
+    padding: 7px;
     border: thin solid ; 
   }
   

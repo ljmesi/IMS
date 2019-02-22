@@ -1,6 +1,6 @@
         <li>   
-            <input id="age" type="number" min = "0" max = "20" step = "0.1">
-            <label for="age">Age (in years)</label><!--<br>-->
+            <input id="age" type="date">
+            <label for="age">Age</label><!--<br>-->
         </li>
         <li>    
             <input id="weight" type="number" min = "0" max = "250" step = "0.1">

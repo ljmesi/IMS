@@ -1,6 +1,6 @@
         <li>   
             <input id="age" type="date">
-            <label for="age">Age</label><!--<br>-->
+            <label for="age">Birthdate</label><!--<br>-->
         </li>
         <li>    
             <input id="weight" type="number" min = "0" max = "250" step = "0.1">

@@ -8589,7 +8589,7 @@ input, textarea, select {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-input[type="text"], input[type="number"], input[type="date"], textarea {
+input[type="password"], input[type="text"], input[type="number"], input[type="date"], input[type="email"], textarea {
     width: 12em;
     height: 2.55em;
 	padding: 5px;
@@ -8723,4 +8723,8 @@ input {
   
   .flex-inner li {
     width: 100px;
+  }
+
+  .first_page {
+      display: flex
   }

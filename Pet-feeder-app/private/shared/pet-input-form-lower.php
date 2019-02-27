@@ -1,8 +1,8 @@
         <li>    
             <label for="health_considerations">Health considerations</label>
             <select id="health_considerations" name="Health Considerations">
-                <option value="Unhappy kidney">Unhappy kidney</option>
                 <option value="Sad lungs">Sad lugns</option>
+                <option value="Unhappy kidneys">Unhappy kidneys</option>
                 <option value="Less well working heart">Less well working heart</option>
                 <option value="Other issues">Other issues</option>
             </select>

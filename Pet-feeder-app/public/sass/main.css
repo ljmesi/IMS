@@ -1412,15 +1412,6 @@ body {
     background-color: #ffffff
 }
 
-input,
-button,
-select,
-textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit
-}
-
 a {
     color: #4582ec;
     text-decoration: none
@@ -8591,17 +8582,18 @@ article.post {
 
 button, input, select, textarea {
 	font-family: inherit;
-	font-size: 100%
+    font-size: 100%;
+    line-height: inherit
 }
 input, textarea, select {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 input[type="text"], input[type="number"], input[type="date"], textarea {
-    width: 18em;
+    width: 12em;
     height: 2.55em;
 	padding: 5px;
-	margin: 10px 10px 10px 0;
+	margin: 10px 0px 10px 0;
 	border-radius: 7px;
     background-color: #fdedec;
     order: 1;
@@ -8632,6 +8624,9 @@ select {
     background-color: #fdedec;
     border-radius: 7px;
     border: thin solid;
+    text-overflow: ellipsis; /*Place ... when the whole text doesn't fit */
+    overflow: hidden; /* No weird scrollbars for hidden texts */
+    white-space: nowrap; /* No line breaks inside the input text field */
 }
 
 label {
@@ -8703,7 +8698,7 @@ input {
   
   .flex-outer > li > label + *,
   .flex-inner {
-    flex: 0 0 18em;
+    flex: 1 1 12em;
   }
   
   .flex-outer li p {

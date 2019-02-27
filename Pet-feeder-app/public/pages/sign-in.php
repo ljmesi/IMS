@@ -1,4 +1,5 @@
-<?php include('../../private/shared/header.php'); ?>
+<?php include('../../private/initialise.php') ?> 
+<?php include(SHARED_PATH . '/header.php'); ?>
 
 
 <div class="container">
@@ -76,4 +77,4 @@
   </div>
 </div>
 
-<?php include('../../private/shared/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php'); ?>

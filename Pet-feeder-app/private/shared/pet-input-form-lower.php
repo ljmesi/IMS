@@ -7,22 +7,15 @@
                 <option value="Other issues">Other issues</option>
             </select>
         </li>  
-        <li>   
-            <input id="age" type="date">
-            <label for="age">Birthdate</label><!--<br>-->
+        <li> 
+            <label for="age">Birthdate</label>  
+            <input id="age" name="age" type="date">
+            
         </li>
-        <li>    
-            <input id="weight" type="number" min = "0" max = "250" step = "0.1">
-            <label for="weight">Weight (in lb)</label><!--<br>-->
+        <li>
+            <label for="weight">Weight (in lb)</label>      
+            <input id="weight" type="number" name="weight" min = "0" max = "250" step = "0.1">   
         </li>
-
-            <!--    
-            <li>    
-                <textarea id="other_notes"></textarea>
-                <label for="other_notes">Other notes</label>
-            </li>
-            -->    
-                <!--<br>-->
                 
         <li>        
             <label for="diet">Diet</label>
@@ -44,20 +37,17 @@
                 </optgroup>
             </select>
         </li>    
-
-            <!--<br>-->
             
-            <li>    
-                <label for="activity_level">Activity level</label>
-                <select id="activity_level" name="activity_level">
-                    <option value="Active">Active</option>
-                    <option value="Normal">Normal</option>
-                    <option value="Less_active">Less active</option>
-                    <option value="Other_activity">Other level of activity</option>
-                </select>
-            </li>    
-                <!--<br>-->
-            
+        <li>    
+            <label for="activity_level">Activity level</label>
+            <select id="activity_level" name="activity_level">
+                <option value="Active">Active</option>
+                <option value="Normal">Normal</option>
+                <option value="Less_active">Less active</option>
+                <option value="Other_activity">Other level of activity</option>
+            </select>
+        </li>    
+                    
         <li>        
             <fieldset>
                 <legend>Gender</legend>

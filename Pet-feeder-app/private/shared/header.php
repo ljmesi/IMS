@@ -42,8 +42,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">Sign in <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a target="_blank" href="./pages/log-in/index.html" title="link to sign in page">Sign in</a></li>
-                <li><a href="./pages/sign-up/index.html" title="link to sign up page">Sign up</a></li>
+                <li><a target="_blank" href="../../public/pages/sign-in.php" title="link to sign in page">Sign in</a></li>
+                <li><a href="../../public/pages/sign-up.php" title="link to sign up page">Sign up</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a target="_blank" href="./index.html" title="link to log out page">Log out</a></li>
               </ul>

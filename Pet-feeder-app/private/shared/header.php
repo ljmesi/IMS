@@ -1,3 +1,9 @@
+<!-- 
+  This include_once statement mightn't be needed but
+  it might be good in case navigating directly to
+  pages instead of clicking through index.php   
+-->
+<?php include_once('../initialise.php') ?> 
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +17,8 @@
   <link rel="stylesheet" href="../../public/sass/main.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" defer></script>
+  <script src="../../private/js/bootstrap.js" defer></script>
 
 </head>
 
@@ -31,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./index.php">Pet Feeder App</a>
+          <a class="navbar-brand" href=".">Pet Feeder App</a>
         </div>
 
 

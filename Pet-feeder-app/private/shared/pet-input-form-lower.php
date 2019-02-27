@@ -1,3 +1,12 @@
+        <li>    
+            <label for="health_considerations">Health considerations</label>
+            <select id="health_considerations" name="Health Considerations">
+                <option value="Unhappy kidney">Unhappy kidney</option>
+                <option value="Sad lungs">Sad lugns</option>
+                <option value="Less well working heart">Less well working heart</option>
+                <option value="Other issues">Other issues</option>
+            </select>
+        </li>  
         <li>   
             <input id="age" type="date">
             <label for="age">Birthdate</label><!--<br>-->
@@ -6,13 +15,7 @@
             <input id="weight" type="number" min = "0" max = "250" step = "0.1">
             <label for="weight">Weight (in lb)</label><!--<br>-->
         </li>
-            <!--
-            <li>    
-                <input id="bday" type="date">
-                <label for="bday">Pet birthday</label>
-            </li>
-            -->    
-                <!--<br>-->  
+
             <!--    
             <li>    
                 <textarea id="other_notes"></textarea>

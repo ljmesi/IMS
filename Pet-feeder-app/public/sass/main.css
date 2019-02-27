@@ -8598,7 +8598,7 @@ input, textarea, select {
 	box-sizing: border-box;
 }
 input[type="text"], input[type="number"], input[type="date"], textarea {
-    width: 12em;
+    width: 18em;
     height: 2.55em;
 	padding: 5px;
 	margin: 10px 10px 10px 0;
@@ -8703,7 +8703,7 @@ input {
   
   .flex-outer > li > label + *,
   .flex-inner {
-    flex: 0 0 192px;
+    flex: 0 0 18em;
   }
   
   .flex-outer li p {

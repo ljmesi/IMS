@@ -13,6 +13,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" defer></script>
   <script src="../../private/js/bootstrap.js" defer></script>
+  <script src="../../private/js/d3.v5.js" defer></script>
 
 </head>
 

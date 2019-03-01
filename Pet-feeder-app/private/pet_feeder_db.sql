@@ -109,16 +109,17 @@ VALUES
 ;
 
 insert into health
-(health_keyword, health_mult)
+(health_keyword, health_mult, health_food)
 VALUES 
-("kidney", multi ),
-("pregnant",.2  ),
-("nursing", age_multi ),
-("heart", age_multi ),
-("joint", age_multi ),
-("overweight", age_multi ),
-("underweight", age_multi )
+("kidney", 1, rec/links),
+("pregnant",1.2 ,rec/links),
+("nursing", 1.4, rec/links),
+("heart", 1, rec/links),
+("joint", age_multi, rec/links),
+("overweight", 1, rec/links),
+("underweight", 1.5, rec/links)
 ;
+
 
 INSERT INTO cat_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )

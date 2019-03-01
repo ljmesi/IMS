@@ -99,15 +99,6 @@ VALUES
 ( "wet limited diet" , )
 ;
 
-Insert into age
-(a_id, a_low, a_high,a_category,age_multi)
-VALUES 
-(a_id, 0.5, 1.0, "puppy", age_multi),
-(a_id, 0.5, 1.5, "kitten", age_multi),
-(a_id, 1.1, 7.0, "adult",age_multi),
-(a_id, 7.1, 100, "senior", age_multi)
-;
-
 insert into health
 (health_keyword, health_mult, health_food)
 VALUES 
@@ -119,7 +110,6 @@ VALUES
 ("overweight", 1, rec/links),
 ("underweight", 1.5, rec/links)
 ;
-
 
 INSERT INTO cat_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )

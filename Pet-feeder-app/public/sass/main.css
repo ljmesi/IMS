@@ -8726,5 +8726,10 @@ input {
   }
 
   .first_page {
-      display: flex
+    display: flex;
+  }
+
+  .recommendation {
+    margin: 20px auto;
+    padding: 8px 16px;
   }

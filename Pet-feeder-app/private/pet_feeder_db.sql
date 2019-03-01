@@ -109,13 +109,13 @@ VALUES
 insert into health
 (health_id, health_keyword, health_mult, health_food)
 VALUES 
-("kidney", 1, rec/links),
-("pregnant",1.2 ,rec/links),
-("nursing", 1.4, rec/links),
-("heart", 1, rec/links),
-("joint", age_multi, rec/links),
-("overweight", 1, rec/links),
-("underweight", 1.5, rec/links)
+("Kidney disease", 1, rec/links),
+("Pregnant",1.2 ,rec/links),
+("Nursing", 1.4, rec/links),
+("Heart condition", 1, rec/links),
+("Joint issues", age_multi, rec/links),
+("Overweight", 1, rec/links),
+("Underweight", 1.5, rec/links)
 ;
 
 insert into key_table

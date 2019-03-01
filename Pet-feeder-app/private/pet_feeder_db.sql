@@ -27,15 +27,33 @@ CREATE TABLE Historical_data (
 
 
 DROP TABLE IF EXISTS Diet ;
-CREATE TABLE Diet(
-diet_id INT NOT NULL,
-Pet_id INT NOT NULL PRIMARY KEY,
-type_diet VARCHAR(45) NOT NULL,
-food_amount VARCHAR(255) NOT NULL,
-health VARCHAR(255) NOT NULL,
-Breed_id INT NOT NULL PRIMARY KEY,
+CREATE TABLE Diet (
+    dID INT NOT NULL,
+    name VARCHAR(45) NOT NULL,
+    food_amount VARCHAR(255) NOT NULL,
+);
 
-FOREIGN KEY (Pet_id) REFERENCES Pet (Pet_id));
+DROP TABLE IF EXISTS health ;
+CREATE TABLE health (
+    hID INT NOT NULL,
+    name VARCHAR(255),
+    health_mult DECIMAL
+);
+
+drop table if exists tags;
+CREATE TABLE tags (
+    tagID INT NOT NULL,
+    name VARCHAR(45) NOT NULL
+);
+
+drop table if exists diet_health_tags;
+CREATE TABLE diet_health_tags (
+    d_hID INT NOT NULL,
+    tag_id INT,
+    PRIMARY KEY (d_hID , tag_id),
+    FOREIGN KEY (tag_id)
+        REFERENCES tags (tagID)
+);
 
 DROP TABLE IF EXISTS dog_breed ;
 CREATE TABLE dog_breed (
@@ -53,17 +71,6 @@ CREATE TABLE cat_breed (
     male_high_base INT NOT NULL,
     female_low_base INT,
     female_high_base INT NOT NULL
-);
-
-DROP TABLE IF EXISTS health ;
-CREATE TABLE health (
-    health_keyword VARCHAR(45) NOT NULL,
-    health_mult DECIMAL,
-    health_food VARCHAR(255) NOT NULL
-);
-
-DROP TABLE IF EXISTS age ;
-CREATE TABLE age (
 );
 
 DROP TABLE IF EXISTS activity ;
@@ -86,11 +93,11 @@ VALUES
 ;
 
 insert into Diet
-(type_diet ,food_amount ,health)
+(dID, type_diet, type_kw ,food_amount)
 VALUES
-("raw", ),
-("raw grain free", ),
-("raw limited",food_amount ,health),
+(,,"raw"),
+(,,"raw grain free", ),
+(,,"raw limited",food_amount),
 ("dry" ,food_amount ,health),
 ("dry grain free" ,food_amount ),
 ("dry limited diet" ,food_amount ),
@@ -100,7 +107,7 @@ VALUES
 ;
 
 insert into health
-(health_keyword, health_mult, health_food)
+(health_id, health_keyword, health_mult, health_food)
 VALUES 
 ("kidney", 1, rec/links),
 ("pregnant",1.2 ,rec/links),
@@ -110,6 +117,12 @@ VALUES
 ("overweight", 1, rec/links),
 ("underweight", 1.5, rec/links)
 ;
+
+insert into key_table
+()
+values
+(),
+();
 
 INSERT INTO cat_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )

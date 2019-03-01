@@ -37,9 +37,17 @@ Breed_id INT NOT NULL PRIMARY KEY,
 
 FOREIGN KEY (Pet_id) REFERENCES Pet (Pet_id));
 
-DROP TABLE IF EXISTS breed ;
-CREATE TABLE breed (
-    b_id INT NOT NULL PRIMARY KEY,
+DROP TABLE IF EXISTS dog_breed ;
+CREATE TABLE dog_breed (
+    b_name VARCHAR(255) NOT NULL,
+    male_low_base INT,
+    male_high_base INT NOT NULL,
+    female_low_base INT,
+    female_high_base INT NOT NULL
+);
+
+DROP TABLE IF EXISTS cat_breed ;
+CREATE TABLE dog_breed (
     b_name VARCHAR(255) NOT NULL,
     male_low_base INT,
     male_high_base INT NOT NULL,
@@ -91,15 +99,15 @@ VALUES
 ;
 
 insert into health
-(health_keyword, health_mult, health_food)
+(health_keyword, health_mult)
 VALUES 
-("kidney", multi, rec/links),
-("pregnant",.2 ,rec/links),
-("nursing", age_multi, rec/links),
-("heart", age_multi, rec/links),
-("joint", age_multi, rec/links),
-("overweight", age_multi, rec/links),
-("underweight", age_multi, rec/links)
+("kidney", multi ),
+("pregnant",.2  ),
+("nursing", age_multi ),
+("heart", age_multi ),
+("joint", age_multi ),
+("overweight", age_multi ),
+("underweight", age_multi )
 ;
 
 
@@ -132,7 +140,7 @@ VALUES
 ( " American English Coonhound",45,65, 45,65),
 ( " American Eskimo Dog(toy)",6,10,6,10),
 ( " American Eskimo Dog (miniature)",10,20, 10,20),
-( " American Eskimo Dogs(tandard)",25,35, 25,35),
+( " American Eskimo Dogs(standard)",25,35, 25,35),
 ( " American Foxhound",65,70, 60,65),
 ( " American Hairless Terrier",12,16, 12,16),
 ( " American Staffordshire Terrier",55,70, 40,55),
@@ -142,8 +150,8 @@ VALUES
 ( " Australian Terrier",12,18, 12,18),
 ( " Basenji",24,24, 22,22),
 ( " Basset Hound",40,65, 40,65),
-( " Beagles(13 inche & under)",15,20, 20,30),
-( " Beagles(13-15 inche)",20,30),
+( " Beagles(13 inches & under)",15,20, 20,30),
+( " Beagles(13-15 inches)",20,30),
 ( " Bearded Collie",45,55, 45,55),
 ( " Beauceron",70,110, 70,110),
 ( " Bedlington Terrier",17,23, 17,23),
@@ -225,7 +233,7 @@ VALUES
 ( " Lowchen",15, 15),
 ( " Maltee" ,2,7,2,7),
 ( " Manchester Terrier(toy)",7,12, 7,12),
-( " Manchester Terriers (tandard)",12,22,12,22),
+( " Manchester Terriers (standard)",12,22,12,22),
 ( " Mastiff",160,230, 120,170),
 ( " Miniature American Shepherd",20,40, 20,40),
 ( " Miniature Bull Terrier",18,28, 18,28),
@@ -254,7 +262,7 @@ VALUES
 ( " Pomeranian",3,7, 3,7),
 ( " Poodle(toy)",4,6,4,6),
 ( " Poodle (miniature)",10,15,10,15),
-( " Poodles(male tandard) ",60,70,40,50),
+( " Poodles(male standard) ",60,70,40,50),
 ( " Portuguese Podengo Pequeno",9,13, 9,13),
 ( " Portuguese Water Dog",42,60, 35,50),
 ( " Pug",14,18, 14,18),
@@ -319,5 +327,5 @@ VALUES
 ( " Wirehaired Vizsla",55,65, 45,55),
 ( " Xoloitzcuintli(toy)",10,15,10,15),
 ( " Xoloitzcuintli(miniature)",15,30,15,30),
-( " Xoloitzcuintli(tandard)",30,55, 30,55),
+( " Xoloitzcuintli(standard)",30,55, 30,55),
 ( " Yorkshire Terrier",5, 7,5, 7);

@@ -25,6 +25,21 @@ VALUES
 
 
 
+
+insert into Historical_data
+(owner_id, pet_id, pet_weight, food_amount, breed_id,pet_pic)
+VALUES
+("101, 1,5, 280,a1", link),
+("102, 2, 8, 336,a2", link/pic ),
+("103, 3, 4,260,a3",link/pic),
+("104,4,5,280,a4",link/pic),
+("105 ,5,7,330,a5" ,link/pic ),
+("106 ,6,10,330" ,link/pic);
+
+
+
+
+
 insert into health
 (health_id, health_keyword, health_mult, health_food)
 VALUES 

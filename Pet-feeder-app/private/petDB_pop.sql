@@ -28,13 +28,21 @@ VALUES
 insert into health
 (health_id, health_keyword, health_mult, health_food)
 VALUES 
-("Kidney disease", 1, rec/links),
-("Pregnant",1.2 ,rec/links),
-("Nursing", 1.4, rec/links),
-("Heart condition", 1, rec/links),
-("Joint issues", age_multi, rec/links),
-("Overweight", 1, rec/links),
-("Underweight", 1.5, rec/links);
+("Kidney disease", 28*8, rec/links),
+("Pregnant",28*10 ,rec/links),
+("Nursing", 28*12, rec/links),
+("Heart condition", 28*8, rec/links),
+("Joint issues", 28*8, rec/links),
+("Overweight", 28*8, rec/links),
+("Underweight", 28*8, rec/links);
+
+INSERT INTO tag
+(tag_id , name_pet )
+VALUES
+("11" , puppy),
+("12t" , kitten);
+
+
 
 INSERT INTO cat_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )

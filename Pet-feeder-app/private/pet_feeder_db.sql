@@ -3,14 +3,15 @@ SET FOREIGN_KEY_CHECKS=0;
 
 DROP TABLE IF EXISTS Pet;
 CREATE TABLE Pet (
-Pet_id INT NOT NULL PRIMARY KEY,
-diet_id INT NOT NULL PRIMARY KEY,
-health_entry VARCHAR (255),
-type_of_pet VARCHAR (255) NOT NULL,
-food_rec VARCHAR (255) NOT NULL,
-age_mult VARCHAR (255) NOT NULL,
-food_amount VARCHAR (255) NOT NULL,
-neuter_spay  NOT NULL);
+    Pet_id INT(11) NOT NULL AUTO_INCREMENT,
+    diet_id INT NOT NULL,
+    health_entry VARCHAR(255),
+    type_of_pet VARCHAR(255) NOT NULL,
+    food_rec VARCHAR(255) NOT NULL,
+    age_mult VARCHAR(255) NOT NULL,
+    food_amount VARCHAR(255) NOT NULL,
+    neuter_spay BOOL NOT NULL
+);
 
 DROP TABLE IF EXISTS Historical_data ;
 CREATE TABLE Historical_data (
@@ -27,28 +28,28 @@ CREATE TABLE Historical_data (
 
 
 DROP TABLE IF EXISTS Diet ;
-CREATE TABLE Diet (
-    dID INT NOT NULL,
+CREATE TABLE diet (
+    dID INT(11) NOT NULL auto_increment,
     name VARCHAR(45) NOT NULL,
     food_amount VARCHAR(255) NOT NULL,
 );
 
 DROP TABLE IF EXISTS health ;
 CREATE TABLE health (
-    hID INT NOT NULL,
+    hID INT(11) NOT NULL AUTO_INCREMENT,
     name VARCHAR(255),
     health_mult DECIMAL
 );
 
 drop table if exists tags;
 CREATE TABLE tags (
-    tagID INT NOT NULL,
+    tagID INT(11) NOT NULL auto_increment,
     name VARCHAR(45) NOT NULL
 );
 
 drop table if exists diet_health_tags;
 CREATE TABLE diet_health_tags (
-    d_hID INT NOT NULL,
+    d_hID INT(11) NOT NULL AUTO_INCREMENT,
     tag_id INT,
     PRIMARY KEY (d_hID , tag_id),
     FOREIGN KEY (tag_id)
@@ -73,27 +74,36 @@ CREATE TABLE cat_breed (
     female_high_base INT NOT NULL
 );
 
-DROP TABLE IF EXISTS activity ;
-CREATE TABLE activity (
-    activity_id INT NOT NULL,
+DROP TABLE IF EXISTS lifestyle ;
+CREATE TABLE lifestyle (
+    lifeID INT(11) NOT NULL auto_increment,
     low_activity DECIMAL NOT NULL,
     normal_activity DECIMAL,
-    high_activity VARCHAR(45) NOT NULL,
+    high_activity decimal NOT NULL,
+);
+
+DROP TABLE if exists age;
+CREATE TABLE age (
+    aID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    a_low DECIMAL NOT NULL,
+    a_high DECIMAL NOT NULL,
+    a_category VARCHAR(45) NOT NULL,
+    age_multi DECIMAL NOT NULL
 );
 
 insert into age
-(a_id, a_low, a_high,a_category,age_multi)
+(a_low, a_high,a_category,age_multi)
 VALUES 
-(a_id, 0.8, 2, "puppy", 1.5),
-(a_id, 0.8, 2, "large puppy", 2),
-(a_id, 0.8, 1, "kitten", age_multi),
-(a_id, 1, 7.0, "adult cat",age_multi),
-(a_id, 1.5, 7.0, "adult dog", 1),
-(a_id, 7.1, 100, "senior", .8)
+(0.8, 1, "puppy", 1.5),
+(0.8, 2, "large puppy", 2),
+(0.8, 1, "kitten", age_multi),
+(1, 7.0, "adult cat",age_multi),
+(1.5, 7.0, "adult dog", 1),
+(7.1, 100, "senior", .8)
 ;
 
 insert into Diet
-(dID, type_diet, type_kw ,food_amount)
+(type_diet, type_kw ,food_amount)
 VALUES
 (,,"raw"),
 (,,"raw grain free", ),
@@ -115,14 +125,7 @@ VALUES
 ("Heart condition", 1, rec/links),
 ("Joint issues", age_multi, rec/links),
 ("Overweight", 1, rec/links),
-("Underweight", 1.5, rec/links)
-;
-
-insert into key_table
-()
-values
-(),
-();
+("Underweight", 1.5, rec/links);
 
 INSERT INTO cat_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )

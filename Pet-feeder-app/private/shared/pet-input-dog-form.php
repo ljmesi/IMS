@@ -131,7 +131,7 @@
         <option value=" Pomeranian"> Pomeranian</option>
         <option value=" Poodle(toy)"> Poodle(toy)</option>
         <option value=" Poodle (miniature)"> Poodle (miniature)</option>
-        <option value=" Poodles(male standard)"> Poodles(male standard)</option>
+        <option value=" Poodles(standard)"> Poodles(standard)</option>
         <option value=" Portuguese Podengo Pequeno"> Portuguese Podengo Pequeno</option>
         <option value=" Portuguese Water Dog"> Portuguese Water Dog</option>
         <option value=" Pug"> Pug</option>

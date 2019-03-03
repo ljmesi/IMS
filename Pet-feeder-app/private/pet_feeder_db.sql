@@ -1,14 +1,12 @@
 SET FOREIGN_KEY_CHECKS=0;
+SET SQL_SAFE_UPDATES = 0;
 
 DROP TABLE IF EXISTS Pet;
 CREATE TABLE Pet (
     pID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    diet_id INT NOT NULL,
     type_of_pet VARCHAR(255) NOT NULL,
     food_rec VARCHAR(255) NOT NULL,
-    food_amount VARCHAR(255) NOT NULL,
-    FOREIGN KEY (diet_id)
-        REFERENCES Diet (dID)
+    food_amount VARCHAR(255) NOT NULL
 );
 
 Drop table if exists Owner;
@@ -21,23 +19,8 @@ CREATE TABLE Owner (
         REFERENCES Pet (pID)
 );
 
-DROP TABLE IF EXISTS Historical_data ;
 
-DROP TABLE IF EXISTS Owner;
-CREATE TABLE Owner (
-    oID INT(11) NOT NULL PRIMARY KEY,
-    email VARCHAR(45) NOT NULL,
-    password VARCHAR(45) NOT NULL
-);
-    owner_id INT NOT NULL PRIMARY KEY,
-    Pet_id INT NOT NULL,
-    pet_weight VARCHAR(45) NOT NULL,
-    food_amount VARCHAR(255) NOT NULL,
-    Breed_id INT NOT NULL PRIMARY KEY,
-    FOREIGN KEY (owner_id)
-        REFERENCES Department (dept_id),
-    FOREIGN KEY (Pet_id)
-        REFERENCEROP TABLE IF EXISTS Historical_data ;
+DROP TABLE IF EXISTS Historical_data;
 CREATE TABLE Historical_data (
     owner_id INT(11) NOT NULL,
     pet_id INT(11) NOT NULL,
@@ -50,41 +33,29 @@ CREATE TABLE Historical_data (
         REFERENCES Owner (pet_id)
 );
 
-
 DROP TABLE IF EXISTS diet ;
 CREATE TABLE diet (
-    dID INT(11) NOT NULL AUTO_INCREMENT,
-    name VARCHAR(45) NOT NULL,
-    tag_id INT(11) NOT NULL,
-    FOREIGN KEY (tag_id)
-        REFERENCES tags (tagID)
+    dID INT(11) AUTO_INCREMENT PRIMARY KEY,
+    diet_name VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS health ;
 CREATE TABLE health (
-    hID INT(11) NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255),
-    tag_id INT(11) NOT NULL,
-    FOREIGN KEY (tag_id)
-        REFERENCES tags (tagID)
+    hID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    health_name VARCHAR(255) NOT NULL
 );
 
 drop table if exists tags;
 CREATE TABLE tags (
-    tagID INT(11) NOT NULL auto_increment,
-    name VARCHAR(45) NOT NULL
+    tagID VARCHAR(10) NOT NULL PRIMARY KEY,
+    tag_name VARCHAR(255) NOT NULL
 );
 
 drop table if exists diet_health;
 CREATE TABLE diet_health (
-    diet_id INT(11) NOT NULL,
-    health_id INT(11) NOT NULL,
-    food_amount INT,
-    PRIMARY KEY (d_hID , tag_id),
-    FOREIGN KEY (diet_id)
-        REFERENCES diet (dID),
-    FOREIGN KEY (health_id)
-        REFERENCES health (hID)
+    diet_id VARCHAR(10) NOT NULL,
+    health_id VARCHAR(10) NOT NULL,
+    food_amount INT
 );
 
 DROP TABLE IF EXISTS dog_breed ;
@@ -107,15 +78,15 @@ CREATE TABLE cat_breed (
 
 DROP TABLE IF EXISTS lifestyle ;
 CREATE TABLE lifestyle (
-    lifeID INT(11) NOT NULL auto_increment,
+    lifeID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     low_activity DECIMAL NOT NULL,
     normal_activity DECIMAL,
-    high_activity decimal NOT NULL,
+    high_activity DECIMAL NOT NULL
 );
 
 DROP TABLE if exists age;
 CREATE TABLE age (
-    aID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    aID VARCHAR(15) NOT NULL PRIMARY KEY,
     a_low DECIMAL NOT NULL,
     a_high DECIMAL NOT NULL,
     a_category VARCHAR(45) NOT NULL,
@@ -123,7 +94,7 @@ CREATE TABLE age (
 );
 
 insert into health
-(health_id, health_keyword)
+(health_name)
 VALUES 
 ("Kidney disease"),
 ("Pregnant"),
@@ -134,19 +105,57 @@ VALUES
 ("Underweight");
 
 insert into diet
-(type_diet)
+(diet_name)
 VALUES
 ("raw"),
 ("raw grain free"),
 ("raw limited"),
 ("dry"),
 ("dry grain free"),
-("dry limited diet"),
+("dry limited"),
 ("wet"),
 ("wet grain free"),
-("wet limited diet");
+("wet limited");
 
-Insert into tags (name)
+Insert into tags
 VALUES
-("raw"),("grain free"),("dry"),("phosphorous"),("kidney"),("toy"),("high protein"),("heart"),("small breed"),(""),
-("adult"),("puppy"),("senior"),("cat"),("dog"),("wet"),("kitten"),("cat"),("joint"),("large breed"),("pregnant"),("nursing");
+(uuid(), "raw"),
+(uuid(), "grain free"),
+(uuid(), "dry"),
+(uuid(), "phosphorous"),
+(uuid(), "kidney"),
+(uuid(), "toy"),
+(uuid(), "weight"),
+(uuid(), "high protein"),
+(uuid(), "heart"),
+(uuid(), "small breed"),
+(uuid(), "adult"),
+(uuid(), "puppy"),
+(uuid(), "senior"),
+(uuid(), "cat"),
+(uuid(), "dog"),
+(uuid(), "wet"),
+(uuid(), "kitten"),
+(uuid(), "cat"),
+(uuid(), "joint"),
+(uuid(), "large breed"),
+(uuid(), "pregnant"),
+(uuid(), "nursing");
+
+ALTER TABLE diet ADD COLUMN tag_id VARCHAR(10) NOT NULL, 
+    ADD FOREIGN KEY (tag_id) REFERENCES tags(tagID);
+
+UPDATE diet
+        JOIN
+    tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') 
+SET 
+    diet.tag_id = tags.tagID;
+    
+ALTER TABLE health ADD COLUMN tag_id VARCHAR(10) NOT NULL, 
+    ADD FOREIGN KEY (tag_id) REFERENCES tags(tagID);
+
+UPDATE health
+        JOIN
+    tags ON health.health_name LIKE CONCAT('%', tags.tag_name, '%') 
+SET 
+    health.tag_id = tags.tagID;    

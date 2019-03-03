@@ -1,38 +1,104 @@
 <?php include('../../private/initialise.php') ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
+<html>
+<style>
+form {
+    border: 3px solid #f1f1f1;
+    margin: 40px 0 10px 0;
+}
+
+input[type=email], input[type=password] {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/*.container {
+    padding: 16px;
+    width: 300px;
+    margin: 24px 0 12px 0;
+    margin-left: 450px;
+}*/
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
-<html>
 <body>
-<div class="container">
-    <h3>Sign-up form</h3> 
-    <form action="captcha-validate.php" method="post">
-      
-      <ul class="flex-outer">
-        <li><label for="username">Email address</label> <input type="email" name="username" id="username" placeholder="Use your email address here" required></li>
-        <li><label for="password">Password</label> <input type="password" name="password" id="password" required></li>
-      </ul>
-        <label for="captcha">Please Enter the Captcha Text</label><img src='../../private/captcha.php' id="captcha">
-            <input type="text" name="answer" placeholder="Enter captcha here"/>
-                <!-- <input type="submit" value="Submit"/> -->
-        <input type="button" id="reload" value="Reload" />
-            <!-- <li><label for="password">Password</label> <input type="password" name="password" id="password" 
-            minlength="8" require ></li> -->
-        <br><input type="submit" value="Sign me up!">
-      
-        
-    </form>
-    <script>
+<h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
+<div class="container"> 
+    <form action='../../private/captcha-validate.php' method="post">
+    <div class="container">
+    <label><b>Email Address</b></label>
+    <input type="email" placeholder="Enter Email address" name="emailaddr" required>
+    <br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br>
+    <img src='../../private/captcha.php' id="captcha">
+    <br>
+    <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>&nbsp;<input type="button" id="reload" value="Reload"/>
+    <br>
+    <input type="submit" value="Sign Up">
+</form>
+<script>
         $(function() { // Handler for .ready() called.
             $('#reload').click(function(){
                 $('#captcha').attr('src', 'captcha.php?' + (new Date).getTime());
             });
         });
-    </script>
+</script>
 </div>
 </body>
 </html>
-
+      
 <?php include(SHARED_PATH . '/footer.php'); ?>

@@ -1,5 +1,7 @@
 <?php include('../../private/initialise.php') ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
+<?php include(dirname(__FILE__).'/../../private/captcha-validate.php'); ?>
+<?php include(dirname(__FILE__).'/../../private/captcha.php'); ?>
 
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

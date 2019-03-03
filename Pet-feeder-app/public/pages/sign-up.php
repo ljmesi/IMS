@@ -84,7 +84,7 @@ span.psw {
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
     <br>
-    <img src='../../private/captcha.php' id="captcha">
+    <img src="./captcha.php" id="captcha">
     <br>
     <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>&nbsp;<input type="button" id="reload" value="Reload"/>
     <br>

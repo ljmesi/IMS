@@ -76,7 +76,7 @@ span.psw {
 <body>
 <h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
 <div class="container"> 
-    <form action='../../private/captcha-validate.php' method="post">
+    <form action='captcha-validate.php' method="post">
     <div class="container">
     <label><b>Email Address</b></label>
     <input type="email" placeholder="Enter Email address" name="emailaddr" required>

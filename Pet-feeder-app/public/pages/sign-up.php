@@ -40,10 +40,10 @@ imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
 
-img.avatar {
+/*img.avatar {
     width: 40%;
     border-radius: 50%;
-}
+}*/
 
 /*.container {
     padding: 16px;

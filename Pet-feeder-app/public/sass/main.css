@@ -9010,4 +9010,59 @@ input {
 .recommendation {
     margin: 20px auto;
     padding: 8px 16px;
+    height: 795px;
+    width: 100%;
 }
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 54px;
+    height: 48px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+body {
+    font: 12px Arial;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: start;
+    
+}
+
+.legend:hover{
+    cursor: pointer;
+}
+/* 
+.blueDots 
+.redDots {
+    opacity: 1;
+} */

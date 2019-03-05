@@ -1,63 +1,23 @@
-
 insert into age
-(a_low, a_high,a_category,age_multi)
+(a_low, a_high,a_category, age_multi)
 VALUES 
-(0.8, 1, "puppy", 1.5),
-(0.8, 2, "large puppy", 2),
-(0.8, 1, "kitten", ),
-(1, 7.0, "adult cat", ),
-(1.5, 7.0, "adult dog", 1),
-(7.1, 100, "senior", .8)
+(0.25, 0.33 , "puppy", 0),
+(0.33, 0.5, "large puppy",0),
+(0.5, 0.6667, "large puppy",0),
+(0.06667, 0.83333, "large puppy",0),
+(0.833333, 1.0, "large puppy",0),
+(1.0, 1.166667, "large puppy",0),
+(1.66667, 1.3333333 , "large puppy",0),
+(1.3333333, 1.5, "large puppy",0),
+(1.5, 2.0, "large puppy",0),
+(0.833333, 8.0, "adult small - medium dog",0),
+(2, 7.0, "adult large dog",0),
+(7.0, 100, "senior small - medium dog",0),
+(5, 100, "senior dog large",0),
+(0.8, 1, "kitten", 1.33),
+(1, 9, "adult cat", 1),
+(9, 100, "senior cat", .85)
 ;
-
-insert into Diet
-(type_diet,food_amount)
-VALUES
-("raw", ),
-("raw grain free", ),
-("raw limited",food_amount),
-("dry" ,food_amount ),
-("dry grain free" ,food_amount ),
-("dry limited diet" ,food_amount ),
-("wet", ),
-("wet grain free" , ),
-( "wet limited diet" , );
-
-
-
-
-insert into Historical_data
-(owner_id, pet_id, pet_weight, food_amount, breed_id,pet_pic)
-VALUES
-("101, 1,5, 280,a1", link),
-("102, 2, 8, 336,a2", link/pic ),
-("103, 3, 4,260,a3",link/pic),
-("104,4,5,280,a4",link/pic),
-("105 ,5,7,330,a5" ,link/pic ),
-("106 ,6,10,330" ,link/pic);
-
-
-
-
-
-insert into health
-(health_id, health_keyword, health_mult, health_food)
-VALUES 
-("Kidney disease", 28*8, rec/links),
-("Pregnant",28*10 ,rec/links),
-("Nursing", 28*12, rec/links),
-("Heart condition", 28*8, rec/links),
-("Joint issues", 28*8, rec/links),
-("Overweight", 28*8, rec/links),
-("Underweight", 28*8, rec/links);
-
-INSERT INTO tag
-(tag_id , name_pet )
-VALUES
-("11" , puppy),
-("12t" , kitten);
-
-
 
 INSERT INTO cat_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )
@@ -71,11 +31,11 @@ VALUES
 INSERT INTO dog_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )
 VALUES
-("Affenpinschers" , 7, 10 ,7,10),
-("Afghan Hounds", 50, 60, 50, 60),
-("Airedale Terriers", 50, 70 , 50, 70 ),
-( " ﻿Akitas",100,130, 70,100),
-( " Alaskan Malamutes",85, 75),
+(" Affenpinschers" , 7, 10 ,7,10),
+(" Afghan Hounds", 50, 60, 50, 60),
+(" Airedale Terriers", 50, 70 , 50, 70 ),
+( " Akitas",100,130, 70,100),
+( " Alaskan Malamutes",NULL,85,NULL, 75),
 ( " American English Coonhounds",45,65, 45,65),
 ( " American Eskimo Dogs(toy)",6,10,6,10),
 ( " American Eskimo Dogs (miniature)",10,20, 10,20),
@@ -89,8 +49,8 @@ VALUES
 ( " Australian Terriers",12,18, 12,18),
 ( " Basenjis",24,24, 22,22),
 ( " Basset Hounds",40,65, 40,65),
-( " Beagles(13 inches & under)",15,20, 20,30),
-( " Beagles(13-15 inches)",20,30),
+( " Beagles(13 inches & under)",15,20, 15,20),
+( " Beagles(13-15 inches)",20,30,20,30),
 ( " Bearded Collies",45,55, 45,55),
 ( " Beaucerons",70,110, 70,110),
 ( " Bedlington Terriers",17,23, 17,23),
@@ -116,9 +76,9 @@ VALUES
 ( " Brittanys",30,40, 30,40),
 ( " Brussels Griffons",8,10, 8,10),
 ( " Bull Terriers",50,70, 50,70),
-( " Bulldogs",50, 40),
+( " Bulldogs",40, 50, 30, 40),
 ( " Bullmastiffs",110,130, 100,120),
-( " Cairn Terriers",14, 13),
+( " Cairn Terriers",NULL,14,NULL, 13),
 ( " Canaan Dogs",45,55, 35,45),
 ( " Cardigan Welsh Corgis",30,38, 25,34),
 ( " Cavalier King Charles Spaniels",13,18, 13,18),
@@ -142,8 +102,8 @@ VALUES
 ( " Entlebucher Mountain Dogs",55,65, 55,65),
 ( " Finnish Lapphunds",33,53, 33,53),
 ( " Finnish Spitz",25,33, 20,28),
-( " Fox Terriers (Smooth)",18, 16),
-( " Fox Terriers (Wire)",16,18, 14, 16),
+( " Fox Terriers (Smooth)",15, 18,13, 16),
+( " Fox Terriers (Wire)",15,18, 13, 16),
 ( " French Bulldogs",22, 28, 22, 28),
 ( " German Pinschers",25,45, 25,45),
 ( " German Shepherd Dogs",65,90, 50,70),
@@ -155,10 +115,10 @@ VALUES
 ( " Greyhounds",65,70, 60,65),
 ( " Harriers",45,60, 45,60),
 ( " Havanese",7,13, 7,13),
-( " Ibizan Hounds",50, 45),
-( " Icelandic Sheepdogs",30, 25),
-( " Irish Terriers",27, 25),
-( " Irish Wolfhounds",120, 105),
+( " Ibizan Hounds",40, 50,38, 45),
+( " Icelandic Sheepdogs",20, 30,20, 25),
+( " Irish Terriers",22,27,20, 25),
+( " Irish Wolfhounds",110,120,95, 105),
 ( " Italian Greyhounds",7,14, 7,14),
 ( " Japanese Chin",7,11, 7,11),
 ( " Keeshonden",35,45, 35,45),
@@ -166,10 +126,10 @@ VALUES
 ( " Komondorok",100, 140 ,80,120),
 ( " Kuvaszok",100,115, 70,90),
 ( " Lagotti Romagnoli",28.5,35, 24,31),
-( " Lakeland Terriers",17, 16),
+( " Lakeland Terriers",13, 17,12, 16),
 ( " Leonbergers",110,170, 90,140),
 ( " Lhasa Apsos",12,18, 12,18),
-( " Lowchen",15, 15),
+( " Lowchen",11, 15,11 ,15),
 ( " Maltese" ,2,7,2,7),
 ( " Manchester Terriers(toy)",7,12, 7,12),
 ( " Manchester Terriers (standard)",12,22,12,22),
@@ -178,15 +138,15 @@ VALUES
 ( " Miniature Bull Terriers",18,28, 18,28),
 ( " Miniature Pinschers",8,10, 8,10),
 ( " Miniature Schnauzers",11,20, 11,20),
-( " Neapolitan Mastiffs",150, 110),
+( " Neapolitan Mastiffs",135,150,95, 110),
 ( " Newfoundlands",130,150, 100,120),
 ( " Norfolk Terriers",11,12, 11,12),
 ( " Norwegian Buhunds",31,40, 26,35),
-( " Norwegian Elkhounds",55, 48),
+( " Norwegian Elkhounds",50, 55,40, 48),
 ( " Norwegian Lundehunds",20,30, 20,30),
-( " Norwich Terriers",12, 12),
+( " Norwich Terriers",9, 12,9, 12),
 ( " Old English Sheepdogs",60,100, 60,100),
-( " Otterhounds",115, 80),
+( " Otterhounds",105,115,70, 80),
 ( " Papillons",5,10, 5,10),
 ( " Parson Russell Terriers",13,17, 13,17),
 ( " Pekingese",10, 14,10, 14),
@@ -216,7 +176,7 @@ VALUES
 ( " Retrievers (Golden)",65,75, 55,65),
 ( " Retrievers (Labrador)",65,80, 55,70),
 ( " Retrievers (Nova Scotia Duck Tolling)",35,50, 35,50),
-( " Rhodesian Ridgebacks",85, 70),
+( " Rhodesian Ridgebacks",80, 85,65, 70),
 ( " Rottweilers",95,135, 80,100),
 ( " Russell Terriers",9,15, 9,15),
 ( " Salukis",40,65, 40,65),
@@ -224,13 +184,13 @@ VALUES
 ( " Schipperkes",10,16, 10,16),
 ( " Scottish Deerhounds", 85, 110, 75,95),
 ( " Scottish Terriers",19,22, 18,21),
-( " Sealyham Terriers",23,24),
-( " slightly less Setters (English)",65,80, 45,55),
+( " Sealyham Terriers",23,24,20,23),
+( " Setters (English)",65,80, 45,55),
 ( " Setters (Gordon)",55,80, 45,70),
 ( " Setters (Irish Red and White)",42,60, 35,50),
-( " Setters (Irish)",70, 60),
+( " Setters (Irish)",63,70,54, 60),
 ( " Shetland Sheepdogs",15,25, 15,25),
-( " Shiba Inu",23, 17),
+( " Shiba Inu",18, 23, 13,17),
 ( " Shih Tzu",9,16, 9,16),
 ( " Siberian Huskies",45,60, 35,50),
 ( " Silky Terriers",9,11, 9,11),
@@ -241,13 +201,13 @@ VALUES
 ( " Spaniels (Boykin)",30,40, 25,35),
 ( " Spaniels (Clumber)",70,85, 55,70),
 ( " Spaniels (English Cocker)",28,34, 26,32),
-( " Spaniels (English Springer)",50, 40),
+( " Spaniels (English Springer)",42, 50,30, 40),
 ( " Spaniels (Field)",35,50, 35,50),
 ( " Spaniels (Irish Water)",55,68, 45,58),
 ( " Spaniels (Sussex)",35,45, 35,45),
 ( " Spaniels (Welsh Springer)",40,55, 35,50),
 ( " Spanish Water Dogs",40,49, 31,40),
-( " Spinoni Italiani",56, 56),
+( " Spinoni Italiani",NULL,56,NULL, 56),
 ( " St. Bernards",140,180, 120,140),
 ( " Staffordshire Bull Terriers",28,38, 24, 34),
 ( " Standard Schnauzers",35,50, 30,45),
@@ -259,7 +219,7 @@ VALUES
 ( " Treeing Walker Coonhounds",50,70, 50,70),
 ( " Vizslas",55,60, 44,55),
 ( " Weimaraners",70,90, 55,75),
-( " Welsh Terriers",20, 18),
+( " Welsh Terriers",15, 20, 13, 18),
 ( " West Highland White Terriers",15,20, 15,20),
 ( " Whippets",25,40, 25,40),
 ( " Wirehaired Pointing Griffons",50,70, 35, 50),
@@ -267,4 +227,102 @@ VALUES
 ( " Xoloitzcuintli(toy)",10,15,10,15),
 ( " Xoloitzcuintli(miniature)",15,30,15,30),
 ( " Xoloitzcuintli(standard)",30,55, 30,55),
-( " Yorkshire Terriers",5, 7,5, 7);
+( " Yorkshire Terriers",5, 7, 5, 7);
+
+insert into lifestyle(activity_level)
+VALUES
+("High activity"),
+("Normal activity"),
+("Low activity");
+
+insert into health
+(health_name)
+VALUES 
+("Kidney disease"),
+("Pregnant"),
+("Nursing"),
+("Heart condition"),
+("Joint issues"),
+("None"),
+("Other"),
+("Overweight"),
+("Underweight");
+
+insert into diet
+(diet_name)
+VALUES
+("raw"),
+("raw grain free"),
+("raw limited"),
+("dry"),
+("dry grain free"),
+("dry limited"),
+("wet"),
+("wet grain free"),
+("wet limited");
+
+Insert into tags(tag_name)
+VALUES
+("raw"),
+("grain free"),
+("dry"),
+("phosphorous"),
+("kidney"),
+("toy"),
+("weight"),
+("high protein"),
+("heart"),
+( "small breed"),
+( "adult"),
+( "puppy"),
+( "senior"),
+( "cat"),
+("dog"),
+("wet"),
+("kitten"),
+("cat"),
+("joint"),
+("large breed"),
+("pregnant"),
+("nursing");
+
+
+
+ALTER TABLE tags modify tagID int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+ALTER TABLE tags AUTO_INCREMENT=20000001;
+
+ALTER TABLE diet ADD dietID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+ALTER TABLE diet ADD COLUMN tag_id INT UNSIGNED NOT NULL, 
+    ADD FOREIGN KEY (tag_id) REFERENCES tags(tagID);
+
+UPDATE diet
+        JOIN
+    tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') 
+SET 
+    diet.tag_id = tags.tagID;
+    
+ALTER TABLE health ADD COLUMN tag_id INT UNSIGNED NOT NULL, 
+    ADD FOREIGN KEY (tag_id) REFERENCES tags(tagID);
+
+UPDATE health
+        JOIN
+    tags ON health.health_name LIKE CONCAT('%', tags.tag_name, '%') 
+SET 
+    health.tag_id = tags.tagID;    
+    
+drop table if exists age_activity_diet_health;
+CREATE TABLE age_activity_diet_health AS SELECT age.a_category,lifestyle.activity_level,diet.diet_name, health.health_name FROM
+    age,
+    lifestyle,
+    diet,
+    health
+GROUP BY age.a_category, lifestyle.activity_level, diet.diet_name , health.health_name;
+
+ALTER TABLE age_activity_diet_health ADD COLUMN amount_percent FLOAT;
+
+ALTER TABLE age 
+ADD COLUMN a_high FLOAT(10,2) NULL AFTER a_low;
+
+INSERT INTO age (a_high) VALUES ('test', 40.35);

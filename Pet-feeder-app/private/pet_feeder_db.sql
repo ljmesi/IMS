@@ -1,14 +1,15 @@
+CREATE database Pet_feeder;
+USE Pet_feeder;
+
 SET FOREIGN_KEY_CHECKS=0;
+SET SQL_SAFE_UPDATES = 0;
 
 DROP TABLE IF EXISTS Pet;
 CREATE TABLE Pet (
     pID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    diet_id INT NOT NULL,
     type_of_pet VARCHAR(255) NOT NULL,
     food_rec VARCHAR(255) NOT NULL,
-    food_amount VARCHAR(255) NOT NULL,
-    FOREIGN KEY (diet_id)
-        REFERENCES Diet (dID)
+    food_amount VARCHAR(255) NOT NULL
 );
 
 Drop table if exists Owner;
@@ -21,28 +22,14 @@ CREATE TABLE Owner (
         REFERENCES Pet (pID)
 );
 
-DROP TABLE IF EXISTS Historical_data ;
 
-DROP TABLE IF EXISTS Owner;
-CREATE TABLE Owner (
-    oID INT(11) NOT NULL PRIMARY KEY,
-    email VARCHAR(45) NOT NULL,
-    password VARCHAR(45) NOT NULL
-);
-    owner_id INT NOT NULL PRIMARY KEY,
-    Pet_id INT NOT NULL,
-    pet_weight VARCHAR(45) NOT NULL,
-    food_amount VARCHAR(255) NOT NULL,
-    Breed_id INT NOT NULL PRIMARY KEY,
-    FOREIGN KEY (owner_id)
-        REFERENCES Department (dept_id),
-    FOREIGN KEY (Pet_id)
-        REFERENCEROP TABLE IF EXISTS Historical_data ;
+DROP TABLE IF EXISTS Historical_data;
 CREATE TABLE Historical_data (
     owner_id INT(11) NOT NULL,
     pet_id INT(11) NOT NULL,
-    pet_weight VARCHAR(45) NOT NULL,
-    food_amount VARCHAR(255) NOT NULL,
+    pet_weight FLOAT(10 , 7 ) UNSIGNED NOT NULL,
+    food_amount FLOAT(10 , 7 ) UNSIGNED NOT NULL,
+    historical_date DATE,
     PRIMARY KEY (owner_id , pet_id),
     FOREIGN KEY (owner_id)
         REFERENCES Owner (oID),
@@ -50,103 +37,52 @@ CREATE TABLE Historical_data (
         REFERENCES Owner (pet_id)
 );
 
-
 DROP TABLE IF EXISTS diet ;
 CREATE TABLE diet (
-    dID INT(11) NOT NULL AUTO_INCREMENT,
-    name VARCHAR(45) NOT NULL,
-    tag_id INT(11) NOT NULL,
-    FOREIGN KEY (tag_id)
-        REFERENCES tags (tagID)
+    diet_name VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS health ;
 CREATE TABLE health (
-    hID INT(11) NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255),
-    tag_id INT(11) NOT NULL,
-    FOREIGN KEY (tag_id)
-        REFERENCES tags (tagID)
+    hID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    health_name VARCHAR(255) NOT NULL
 );
 
 drop table if exists tags;
 CREATE TABLE tags (
-    tagID INT(11) NOT NULL auto_increment,
-    name VARCHAR(45) NOT NULL
-);
-
-drop table if exists diet_health;
-CREATE TABLE diet_health (
-    diet_id INT(11) NOT NULL,
-    health_id INT(11) NOT NULL,
-    food_amount INT,
-    PRIMARY KEY (d_hID , tag_id),
-    FOREIGN KEY (diet_id)
-        REFERENCES diet (dID),
-    FOREIGN KEY (health_id)
-        REFERENCES health (hID)
-);
+    tagID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tag_name VARCHAR(45) NOT NULL
+)  AUTO_INCREMENT=1001;
 
 DROP TABLE IF EXISTS dog_breed ;
 CREATE TABLE dog_breed (
     b_name VARCHAR(255) NOT NULL,
-    male_low_base INT,
-    male_high_base INT NOT NULL,
-    female_low_base INT,
-    female_high_base INT NOT NULL
+    male_low_base INT UNSIGNED,
+    male_high_base INT UNSIGNED NOT NULL,
+    female_low_base INT UNSIGNED,
+    female_high_base INT UNSIGNED NOT NULL
 );
 
 DROP TABLE IF EXISTS cat_breed ;
 CREATE TABLE cat_breed (
     b_name VARCHAR(255) NOT NULL,
-    male_low_base INT,
-    male_high_base INT NOT NULL,
-    female_low_base INT,
-    female_high_base INT NOT NULL
+    male_low_base INT UNSIGNED,
+    male_high_base INT UNSIGNED NOT NULL,
+    female_low_base INT UNSIGNED,
+    female_high_base INT UNSIGNED NOT NULL
 );
 
 DROP TABLE IF EXISTS lifestyle ;
 CREATE TABLE lifestyle (
-    lifeID INT(11) NOT NULL auto_increment,
-    low_activity DECIMAL NOT NULL,
-    normal_activity DECIMAL,
-    high_activity decimal NOT NULL,
+    lifeID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    activity_level VARCHAR(45) NOT NULL
 );
 
-DROP TABLE if exists age;
+drop table if exists age;
 CREATE TABLE age (
-    aID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    a_low DECIMAL NOT NULL,
-    a_high DECIMAL NOT NULL,
+    ageID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    a_low FLOAT(10 , 7 ) UNSIGNED NULL,
+    a_high FLOAT(10 , 7 ) UNSIGNED NULL,
     a_category VARCHAR(45) NOT NULL,
-    age_multi DECIMAL NOT NULL
-);
-
-insert into health
-(health_id, health_keyword)
-VALUES 
-("Kidney disease"),
-("Pregnant"),
-("Nursing"),
-("Heart condition"),
-("Joint issues"),
-("Overweight"),
-("Underweight");
-
-insert into diet
-(type_diet)
-VALUES
-("raw"),
-("raw grain free"),
-("raw limited"),
-("dry"),
-("dry grain free"),
-("dry limited diet"),
-("wet"),
-("wet grain free"),
-("wet limited diet");
-
-Insert into tags (name)
-VALUES
-("raw"),("grain free"),("dry"),("phosphorous"),("kidney"),("toy"),("high protein"),("heart"),("small breed"),(""),
-("adult"),("puppy"),("senior"),("cat"),("dog"),("wet"),("kitten"),("cat"),("joint"),("large breed"),("pregnant"),("nursing");
+    age_multi FLOAT(10 , 7 ) UNSIGNED
+)  AUTO_INCREMENT=2001;

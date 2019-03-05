@@ -13,7 +13,9 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" defer></script>
   <script src="../../private/js/bootstrap.js" defer></script>
-  <script type="text/javascript" src="../../private/js/d3.v5.js" defer></script>
+  <script type="text/javascript" src="../../private/js/d3.v4.js" defer></script>
+  <!-- <script src="https://d3js.org/d3-dsv.v1.min.js" defer></script>
+  <script src="https://d3js.org/d3-fetch.v1.min.js" defer></script> -->
   <script type="text/javascript" src="../../private/js/visualisations.js" defer></script>
 
 </head>

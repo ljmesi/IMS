@@ -1,3 +1,6 @@
+CREATE database Pet_feeder;
+USE Pet_feeder;
+
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_SAFE_UPDATES = 0;
 
@@ -24,8 +27,8 @@ DROP TABLE IF EXISTS Historical_data;
 CREATE TABLE Historical_data (
     owner_id INT(11) NOT NULL,
     pet_id INT(11) NOT NULL,
-    pet_weight VARCHAR(45) NOT NULL,
-    food_amount VARCHAR(255) NOT NULL,
+    pet_weight DECIMAL NOT NULL,
+    food_amount DECIMAL NOT NULL,
     PRIMARY KEY (owner_id , pet_id),
     FOREIGN KEY (owner_id)
         REFERENCES Owner (oID),
@@ -117,9 +120,9 @@ VALUES
 INSERT INTO dog_breed
 (b_name , male_low_base, male_high_base,female_low_base, female_high_base )
 VALUES
-("Affenpinschers" , 7, 10 ,7,10),
-("Afghan Hounds", 50, 60, 50, 60),
-("Airedale Terriers", 50, 70 , 50, 70 ),
+(" Affenpinschers" , 7, 10 ,7,10),
+(" Afghan Hounds", 50, 60, 50, 60),
+(" Airedale Terriers", 50, 70 , 50, 70 ),
 ( " ﻿Akitas",100,130, 70,100),
 ( " Alaskan Malamutes",NULL,85,NULL, 75),
 ( " American English Coonhounds",45,65, 45,65),

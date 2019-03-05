@@ -4,8 +4,8 @@ insert into age
 VALUES 
 (0.8, 1, "puppy", 1.5),
 (0.8, 2, "large puppy", 2),
-(0.8, 1, "kitten", ),
-(1, 7.0, "adult cat", ),
+(0.8, 1, "kitten" ,1),
+(1, 7.0, "adult cat",9 ),
 (1.5, 7.0, "adult dog", 1),
 (7.1, 100, "senior", .8)
 ;
@@ -13,15 +13,15 @@ VALUES
 insert into Diet
 (type_diet,food_amount)
 VALUES
-("raw", ),
-("raw grain free", ),
+("raw", food_amount ),
+("raw grain free",food_amount ),
 ("raw limited",food_amount),
 ("dry" ,food_amount ),
 ("dry grain free" ,food_amount ),
 ("dry limited diet" ,food_amount ),
-("wet", ),
-("wet grain free" , ),
-( "wet limited diet" , );
+("wet", food_amount),
+("wet grain free" ,food_amount ),
+( "wet limited diet" ,food_amount );
 
 
 

@@ -286,43 +286,9 @@ VALUES
 ("pregnant"),
 ("nursing");
 
+INSERT INTO diet_health_tag_map (dID, tagID) 
+SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
 
-
-ALTER TABLE tags modify tagID int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
-
-ALTER TABLE tags AUTO_INCREMENT=20000001;
-
-ALTER TABLE diet ADD dietID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
-
-ALTER TABLE diet ADD COLUMN tag_id INT UNSIGNED NOT NULL, 
-    ADD FOREIGN KEY (tag_id) REFERENCES tags(tagID);
-
-UPDATE diet
-        JOIN
-    tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') 
-SET 
-    diet.tag_id = tags.tagID;
-    
-ALTER TABLE health ADD COLUMN tag_id INT UNSIGNED NOT NULL, 
-    ADD FOREIGN KEY (tag_id) REFERENCES tags(tagID);
-
-UPDATE health
-        JOIN
-    tags ON health.health_name LIKE CONCAT('%', tags.tag_name, '%') 
-SET 
-    health.tag_id = tags.tagID;    
-    
-drop table if exists age_activity_diet_health;
-CREATE TABLE age_activity_diet_health AS SELECT age.a_category,lifestyle.activity_level,diet.diet_name, health.health_name FROM
-    age,
-    lifestyle,
-    diet,
-    health
-GROUP BY age.a_category, lifestyle.activity_level, diet.diet_name , health.health_name;
+insert into Pet (type_of_pet , food_rec, food_amount ) VALUES(("dog", , 83.4);
 
 ALTER TABLE age_activity_diet_health ADD COLUMN amount_percent FLOAT;
-
-ALTER TABLE age 
-ADD COLUMN a_high FLOAT(10,2) NULL AFTER a_low;
-
-INSERT INTO age (a_high) VALUES ('test', 40.35);

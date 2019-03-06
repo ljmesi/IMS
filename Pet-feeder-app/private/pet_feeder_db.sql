@@ -4,53 +4,53 @@ USE Pet_feeder;
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_SAFE_UPDATES = 0;
 
-DROP TABLE IF EXISTS Pet;
+drop table if exists Pet;
 CREATE TABLE Pet (
-    pID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     type_of_pet VARCHAR(255) NOT NULL,
     food_rec VARCHAR(255) NOT NULL,
-    food_amount VARCHAR(255) NOT NULL
-);
+    food_amount FLOAT(10,7) UNSIGNED NOT NULL
+)  AUTO_INCREMENT=5001;
 
-Drop table if exists Owner;
-CREATE TABLE Owner (
-    oID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    pet_id INT(11) NOT NULL,
+drop table if exists pet_owner;
+CREATE TABLE pet_owner (
+    oID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pet_id INT,
     email VARCHAR(45) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    FOREIGN KEY (pet_id)
+    own_password VARCHAR(255) NOT NULL,
+     FOREIGN KEY (pet_id)
         REFERENCES Pet (pID)
-);
-
+)  AUTO_INCREMENT=4001;
 
 DROP TABLE IF EXISTS Historical_data;
 CREATE TABLE Historical_data (
-    owner_id INT(11) NOT NULL,
-    pet_id INT(11) NOT NULL,
+    owner_id INT,
+    pet_id INT,
     pet_weight FLOAT(10 , 7 ) UNSIGNED NOT NULL,
     food_amount FLOAT(10 , 7 ) UNSIGNED NOT NULL,
     historical_date DATE,
     PRIMARY KEY (owner_id , pet_id),
     FOREIGN KEY (owner_id)
-        REFERENCES Owner (oID),
+        REFERENCES pet_owner (oID),
     FOREIGN KEY (pet_id)
-        REFERENCES Owner (pet_id)
+        REFERENCES pet_owner (pet_id)
 );
 
-DROP TABLE IF EXISTS diet ;
+DROP table if exists diet;
 CREATE TABLE diet (
+    dID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     diet_name VARCHAR(255) NOT NULL
-);
+)  AUTO_INCREMENT=2001;
 
-DROP TABLE IF EXISTS health ;
+drop table if exists health;
 CREATE TABLE health (
-    hID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    health_name VARCHAR(255) NOT NULL
-);
+    hID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    health_name VARCHAR(45) NOT NULL
+)  AUTO_INCREMENT=3001;
 
 drop table if exists tags;
 CREATE TABLE tags (
-    tagID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tag_name VARCHAR(45) NOT NULL
 )  AUTO_INCREMENT=1001;
 
@@ -86,3 +86,16 @@ CREATE TABLE age (
     a_category VARCHAR(45) NOT NULL,
     age_multi FLOAT(10 , 7 ) UNSIGNED
 )  AUTO_INCREMENT=2001;
+
+DROP TABLE IF EXISTS diet_tag_map;
+CREATE TABLE diet_tag_map (
+    dID INT default '0',
+    tagID INT,
+    PRIMARY KEY (dID , tagID),
+    KEY tag_fk (tagID),
+    CONSTRAINT diet_fk FOREIGN KEY (dID)
+        REFERENCES diet (dID),
+    CONSTRAINT tag_fk FOREIGN KEY (tagID)
+        REFERENCES tags (tagID)
+);
+??ALTER TABLE diet_health_tag_map ADD hID INT, ADD CONSTRAINT health_fk FOREIGN KEY(hID) REFERENCES health(hID) 

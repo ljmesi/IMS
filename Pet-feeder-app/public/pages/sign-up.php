@@ -82,9 +82,12 @@ span.psw {
     <input type="email" placeholder="Enter Email address" name="emailaddr" required>
     <br>
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" onchange="form.psw2.pattern = RegExp.escape(this.value);">
     <br>
-    <img src="./captcha.php" id="captcha">
+    <label><b>Confirm Password</b></label>
+    <input type="password" placeholder="Enter Password again" required name="psw2">
+    <br>
+    <p><img src="./captcha.php" id="captcha"><p>
     <br>
     <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>&nbsp;<input type="button" id="reload" value="Reload"/>
     <br>

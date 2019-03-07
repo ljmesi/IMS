@@ -1,5 +1,26 @@
 <?php include('../../private/initialise.php') ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
+<?PHP
+  // form handler
+  if($_POST && isset($_POST['emailaddr'], $_POST['psw'])) 
+  {
+    /*$email = $_POST['emailaddr'];
+    $password = $_POST['psw'];
+
+    if(!$email) {
+      $errorMsg = "Please enter your email address";
+    } elseif(!$email || !preg_match("/^\S+@\S+$/", $email)) {
+      $errorMsg = "Please enter a valid Email address";
+    } elseif(!$password) {
+      $errorMsg = "Please enter your password";
+    } else {*/
+      //redirect
+      header("Location: loginsuccess.php");
+      exit;
+    }
+
+  //}
+?>
 <html>
 <style>
 form {
@@ -74,9 +95,9 @@ span.psw {
 </head>
 
 <body>
-<h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
+<h2 align="center" color="red">Login</h2>
 <div class="container"> 
-    <form action='loginsuccess.php' method="post">
+    <form action='' method="post" autocomplete="off">
     <div class="container">
     <label><b>Email Address</b></label>
     <input type="email" placeholder="Enter Email address" name="emailaddr" required>

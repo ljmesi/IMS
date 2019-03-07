@@ -76,22 +76,25 @@ span.psw {
 <body>
 <h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
 <div class="container"> 
-    <form action='captcha-validate.php' method="post">
+    <form action='captcha-validate.php' method="post" autocomplete="off">
     <div class="container">
     <label><b>Email Address</b></label>
     <input type="email" placeholder="Enter Email address" name="emailaddr" required>
     <br>
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" onchange="form.psw2.pattern = RegExp.escape(this.value);">
+    <input type="password" placeholder="Password must contain at least 6 characters, including UPPER/lowercase and numbers" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" onchange="form.psw2.pattern = RegExp.escape(this.value);">
     <br>
     <label><b>Confirm Password</b></label>
-    <input type="password" placeholder="Enter Password again" required name="psw2">
+    <input type="password" placeholder="Enter the same password as above" required name="psw2">
     <br>
-    <p><img src="./captcha.php" id="captcha"><p>
+    <p><img src="captcha.php" id="captcha"><p>
     <br>
     <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>&nbsp;<input type="button" id="reload" value="Reload"/>
     <br>
     <input type="submit" value="Sign Up">
+    <p>
+  		Already a member? <a href="sign-in.php">Sign in</a>
+  	</p>
 </form>
 <script>
         $(function() { // Handler for .ready() called.

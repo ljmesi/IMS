@@ -50,7 +50,7 @@ CREATE TABLE health (
 
 drop table if exists tags;
 CREATE TABLE tags (
-    tID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tagID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tag_name VARCHAR(45) NOT NULL
 )  AUTO_INCREMENT=1001;
 
@@ -98,4 +98,3 @@ CREATE TABLE diet_tag_map (
     CONSTRAINT tag_fk FOREIGN KEY (tagID)
         REFERENCES tags (tagID)
 );
-??ALTER TABLE diet_health_tag_map ADD hID INT, ADD CONSTRAINT health_fk FOREIGN KEY(hID) REFERENCES health(hID) 

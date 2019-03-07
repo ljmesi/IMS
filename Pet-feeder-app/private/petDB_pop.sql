@@ -1,15 +1,17 @@
 insert into age
 (a_low, a_high,a_category, age_multi)
 VALUES 
-(0.25, 0.33 , "puppy", 0),
-(0.33, 0.5, "large puppy",0),
-(0.5, 0.6667, "large puppy",0),
-(0.06667, 0.83333, "large puppy",0),
-(0.833333, 1.0, "large puppy",0),
-(1.0, 1.166667, "large puppy",0),
-(1.66667, 1.3333333 , "large puppy",0),
-(1.3333333, 1.5, "large puppy",0),
-(1.5, 2.0, "large puppy",0),
+(0.1666667, 0.25 , "puppy 2mo", 0),
+(0.25, 0.33 , "puppy 3mo", 0),
+(0.33, 0.5, " puppy 4mo",0),
+(0.5, 0.58333333, "puppy 5mo",0),
+(0.58333333, 0.6667, "puppy 6mo",0),
+(0.06667, 0.83333, "puppy 7mo",0),
+(0.833333, 1.0, "puppy 8mo",0),
+(1.0, 1.166667, "large puppy 10mo",0),
+(1.66667, 1.3333333 , "large puppy 12 mo",0),
+(1.3333333, 1.5, "large puppy 14mo",0),
+(1.5, 2.0, "large puppy 16mo",0),
 (0.833333, 8.0, "adult small - medium dog",0),
 (2, 7.0, "adult large dog",0),
 (7.0, 100, "senior small - medium dog",0),
@@ -83,7 +85,7 @@ VALUES
 ( " Cardigan Welsh Corgis",30,38, 25,34),
 ( " Cavalier King Charles Spaniels",13,18, 13,18),
 ( " Cesky Terriers",14,24, 14,24),
-( " Chihuahuas",6, 6, 6, 6),
+( " Chihuahuas",3, 10, 3, 10),
 ( " Chinese Crested",8,12, 8,12),
 ( " Chinese SharPei",45,60, 45,60),
 ( " Chinooks",55,90, 50,65),
@@ -236,17 +238,19 @@ VALUES
 ("Low activity");
 
 insert into health
-(health_name)
+(health_name, active, inactive)
 VALUES 
-("Kidney disease"),
-("Pregnant"),
-("Nursing"),
-("Heart condition"),
-("Joint issues"),
-("None"),
-("Other"),
-("Overweight"),
-("Underweight");
+("Kidney disease", null, null),
+("Pregnant 0-5wks", 1.3, 1.2),
+("Pregnant 5+wks)", 1.3, 1.2),
+("Nursing 1-3wks", 1.4,1.3),
+("Nursing 3+wks", 1.6,1.5 ),
+("Heart condition",null, null),
+("Joint issues",NULL,NULL),
+("None",NULL,NULL),
+("Other",NULL,NULL),
+("Overweight", 0.56,0.65 ),
+("Underweight", 1.33, 1.5);
 
 insert into diet
 (diet_name)
@@ -286,7 +290,33 @@ VALUES
 ("pregnant"),
 ("nursing");
 
-INSERT INTO diet_health_tag_map (dID, tagID) 
+insert into Dog_Food_table
+ (Age, Body_type, High_activity, Low_activity, Normal_activity, diet_type)
+ VALUES
+("adult","large", 0.01395275, 0.010598590,0.012279275, "dry"),
+("adult", "medium",	0.01723285,0.013097585,	0.015176329, "dry"),
+("adult", "small", 0.01892292, 0.014345833,0.016581250, "dry"),
+("adult", "Toy", 0.02625000, 0.019875000,0.023000000,"dry"),
+("adult", "xlarge",	70090.91, 0.01110334, 0.008437904,0.009769617, "dry"),
+("senior", "large",	0.01329875,	0.011486310, "dry"	),
+("senior", "medium,", 0.01573417, 0.013591667, "dry"),	
+("senior", "small",	0.01960903,	0.016942361	, "dry"),
+("senior", "toy", 0.02350000, 0.020250000 , "dry"),
+("senior"," xlarge", 0.01115221, 0.009635923 , "dry");
+
+
+insert into Dog_Food_table
+ (Age, Body_type, High_activity, Low_activity, Normal_activity, diet_type)
+ VALUES
+("adult","large", 0.01395275, 0.010598590,0.012279275, "dry"),
+("adult", "toy", 0.02350000, 0.020250000 , "dry"),
+("adult"," xlarge", 0.01115221, 0.009635923 , "dry");
+
+
+
+
+
+INSERT INTO diet_tag_map (dID, tagID) 
 SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
 
 insert into Pet (type_of_pet , food_rec, food_amount ) VALUES(("dog", , 83.4);

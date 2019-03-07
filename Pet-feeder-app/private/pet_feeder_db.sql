@@ -45,7 +45,9 @@ CREATE TABLE diet (
 drop table if exists health;
 CREATE TABLE health (
     hID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    health_name VARCHAR(45) NOT NULL
+    health_name VARCHAR(45) NOT NULL,
+    active FLOAT(10 , 7 ),
+    inactive FLOAT(10 , 7 )
 )  AUTO_INCREMENT=3001;
 
 drop table if exists tags;
@@ -97,4 +99,14 @@ CREATE TABLE diet_tag_map (
         REFERENCES diet (dID),
     CONSTRAINT tag_fk FOREIGN KEY (tagID)
         REFERENCES tags (tagID)
+);
+
+DROP TABLE IF EXISTS Dog_Food_table;
+CREATE TABLE Dog_Food_table (
+    Age INT,
+    Body_type VARCHAR(45),
+    High_activity FLOAT(15 , 12 ),
+    Low_activity FLOAT(15 , 12 ),
+    Normal_activity FLOAT(15 , 12 ),
+    diet_type VARCHAR(45)
 );

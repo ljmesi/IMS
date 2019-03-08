@@ -9,9 +9,3 @@
                          <h1 class="input-title" itemprop="name headline">Please insert pet info</h1> 
                     </header>
 
-                    <div class="post-content flex-container" itemprop="articleBody">
-                        <form action="" method="post">
-                            <ul class="flex-outer">
-                                
-
-

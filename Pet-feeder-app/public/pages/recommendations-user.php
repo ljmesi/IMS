@@ -26,7 +26,7 @@
       <gcse:searchresults-only queryParameterName="q" webSearchResultSetSize="small" webSearchSafesearch="active"></gcse:searchresults-only>
   </div> 
 
-  <h4>Your pet's nutritional data visualised</h4>
+  <h4>Your <?php echo $pet_species; ?>'s nutritional data visualised</h4>
   <div id="visualisation"></div>
   
     

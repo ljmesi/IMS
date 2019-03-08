@@ -7,13 +7,7 @@
 
                             <?php include(SHARED_PATH . '/pet-input-dog-form.php'); ?>
 
-                            <?php include(SHARED_PATH . '/pet-input-form-lower.php'); ?>
-                            
-                                <li>
-                                    <input type="submit" value="Submit">
-                                </li>
-                            </ul>
-                        </form>
+                            <?php include(SHARED_PATH . '/pet-input-form-lower.php'); ?>                        
   
                     </div>
 

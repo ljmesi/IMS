@@ -9,16 +9,13 @@
 
                             <?php include(SHARED_PATH . '/pet-input-form-lower.php'); ?>
                             
-                            <li>
-                                <input type="submit" value="Submit">
-                            </li>
-                        </ul>
-                    </form>
-
-                            
+                                <li>
+                                    <input type="submit" value="Submit">
+                                </li>
+                            </ul>
+                        </form>
+  
                     </div>
-
-
 
                     <div class="row">
 

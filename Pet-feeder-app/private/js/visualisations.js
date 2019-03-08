@@ -1,8 +1,8 @@
 var margin = {
             top: 10,
-            right: 70,
+            right: 90,
             bottom: 100,
-            left: 70
+            left: 90
       },
       width = window.innerWidth - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
@@ -336,7 +336,7 @@ svg.append("g")
 svg.append("text")
       .attr("transform", "rotate(-90)")
       .attr("x", -70 - (height / 2))
-      .attr("y", 20 - margin.left)
+      .attr("y", 35 - margin.left)
       //      .attr("x", -30)
       //      .attr("y", height + margin.top + 5)
       .attr("class", "legend")
@@ -358,7 +358,7 @@ svg.append("text")
 svg.append("text")
       .attr("transform", "rotate(-90)")
       .attr("x", -70 - (height / 2))
-      .attr("y", -10 + width + margin.right)
+      .attr("y", -25 + width + margin.right)
 
       //    .attr("x", 730)
       //    .attr("y", height + margin.top + 5)

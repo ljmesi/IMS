@@ -1597,7 +1597,8 @@ h5,
 h6,
 .h6 {
     margin-top: 11px;
-    margin-bottom: 11px
+    margin-bottom: 11px;
+    margin-left: 20px
 }
 
 h4 small,
@@ -9023,7 +9024,7 @@ input {
 div.tooltip {
     position: absolute;
     text-align: center;
-    width: 60px;
+    width: 70px;
     height: 48px;
     padding: 2px;
     font: 12px sans-serif;
@@ -9068,6 +9069,7 @@ Recommendations page
 .flex-container-recommendation{
     /* display: inline-flex; */
     display: flex;
+    flex-direction: column;
  /*
     flex-direction: row;
    
@@ -9077,7 +9079,7 @@ Recommendations page
 
     flex-direction: column-reverse;
 
-    flex-direction: column;
+    
  */
 }
 

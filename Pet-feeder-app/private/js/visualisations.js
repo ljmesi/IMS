@@ -1,8 +1,8 @@
 var margin = {
-            top: 20,
-            right: 20,
-            bottom: 80,
-            left: 50
+            top: 50,
+            right: 70,
+            bottom: 100,
+            left: 70
       },
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
@@ -18,11 +18,13 @@ var y0 = d3.scaleLinear()
 var y1 = d3.scaleLinear()
       .range([height, 0]);
 
-var xAxis = d3.axisBottom(x);
+
+var xAxis = d3.axisBottom(x)
+.tickFormat(d3.timeFormat("%Y-%m-%d")); // Change the format of tick labels
 
 var yAxisLeft = d3.axisLeft(y0);
 
-var yAxisRight = d3.axisLeft(y1);
+var yAxisRight = d3.axisRight(y1);
 
 
 var pet_weight_line = d3.line()
@@ -246,7 +248,7 @@ svg.selectAll("dot")
             div.transition()
                   .duration(200)
                   .style("opacity", .85);
-            div.html(formatTime(d.date) + "<br/>" + d.weight)
+            div.html(formatTime(d.date) + "<br/>" + d.weight + " g")
                   .style("left", (d3.event.pageX) + "px")
                   .style("top", (d3.event.pageY - 50) + "px");
       })
@@ -279,7 +281,7 @@ svg.selectAll("dot")
             div.transition()
                   .duration(200)
                   .style("opacity", .85);
-            div.html(formatTime(d.date) + "<br/>" + d.food_amount)
+            div.html(formatTime(d.date) + "<br/>" + d.food_amount + " g")
                   .style("left", (d3.event.pageX) + "px")
                   .style("top", (d3.event.pageY - 50) + "px");
       })
@@ -289,10 +291,17 @@ svg.selectAll("dot")
                   .style("opacity", 0);
       });
 
+      // Add X axis
 svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(xAxis)
+      // Rotate x axis tick labels
+      .selectAll("text")  
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(-65)" );
 
 // edit the Y Axis Left
 svg.append("g")
@@ -301,6 +310,7 @@ svg.append("g")
       .attr("id", "blueAxis")
       .call(yAxisLeft);
 
+// Add Y axis right
 svg.append("g")
       .attr("class", "y axis")
       .attr("transform", "translate(" + width + " ,0)")
@@ -308,10 +318,13 @@ svg.append("g")
       .attr("id", "redAxis")
       .call(yAxisRight);
 
-// Add the blue line title
+// Add left axis label title
 svg.append("text")
-      .attr("x", 0)
-      .attr("y", height + margin.top + 30)
+      .attr("transform", "rotate(-90)")
+      .attr("x", -70 - (height / 2))
+      .attr("y", 25 - margin.left)
+//      .attr("x", -30)
+//      .attr("y", height + margin.top + 5)
       .attr("class", "legend")
       .style("fill", "steelblue")
       .on("click", function () {
@@ -325,12 +338,16 @@ svg.append("text")
             // Update whether or not the elements are active
             blueLine.active = active;
       })
-      .text("Pet weight");
+      .text("Pet weight (in grams)");
 
-// Add the red line title
+// Add right axis label title
 svg.append("text")
-      .attr("x", 0)
-      .attr("y", height + margin.top + 50)
+      .attr("transform", "rotate(-90)")
+      .attr("x", -70 - (height / 2))
+      .attr("y", -20 + width + margin.right)
+      
+  //    .attr("x", 730)
+  //    .attr("y", height + margin.top + 5)
       .attr("class", "legend")
       .style("fill", "red")
       .on("click", function () {
@@ -344,4 +361,14 @@ svg.append("text")
             // Update whether or not the elements are active
             redLine.active = active;
       })
-      .text("Food amount");
+      .text("Food amount (in grams)");
+
+ // Add X axis label text
+svg.append("text")
+      .attr("x", width / 2 )
+      .attr("y", height + margin.top + 35)
+      .attr("class", "legend")
+//      .style("text-anchor", "middle")
+      .text("Date");
+
+console.log(window.innerWidth);

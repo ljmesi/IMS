@@ -9023,7 +9023,7 @@ input {
 div.tooltip {
     position: absolute;
     text-align: center;
-    width: 54px;
+    width: 60px;
     height: 48px;
     padding: 2px;
     font: 12px sans-serif;
@@ -9061,8 +9061,24 @@ path {
 .legend:hover{
     cursor: pointer;
 }
-/* 
-.blueDots 
-.redDots {
-    opacity: 1;
-} */
+
+/*
+Recommendations page
+*/
+.flex-container-recommendation{
+    /* display: inline-flex; */
+    display: flex;
+ /*
+    flex-direction: row;
+   
+    flex-direction: row;
+ 
+    
+
+    flex-direction: column-reverse;
+
+    flex-direction: column;
+ */
+}
+
+

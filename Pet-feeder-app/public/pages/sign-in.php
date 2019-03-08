@@ -29,7 +29,7 @@ form {
 }
 
 input[type=email], input[type=password] {
-    width: 95%;
+    width: 25%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;

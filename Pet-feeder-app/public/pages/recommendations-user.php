@@ -1,4 +1,11 @@
 <?php include('../../private/initialise.php') ?> 
+
+<?php 
+  $query = $_GET['q']; // Get the whole query 
+  $strArray = explode(' ', $query); // Parse the query
+  $pet_species = $strArray[0]; // Store the first word into the species name
+ ?>
+
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <h3 style="text-align: center"><?php echo ucfirst($pet_species); ?>  food recommendations</h3>

@@ -1426,7 +1426,7 @@ body {
     font-size: 20px;
     line-height: 1.6;
     color: #333333;
-/*    background-color: #F9F5FF */
+    background-color: #F9F5FF 
 }
 
 a {
@@ -4458,7 +4458,8 @@ tbody.collapse.in {
     list-style: none;
     font-size: 16px;
     text-align: left;
-    background-color: #ffffff;
+/*    background-color: #ffffff; */
+     background-color: #F9F5FF; 
     border: 1px solid #cccccc;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -8978,7 +8979,7 @@ input {
 
 .flex-outer>li>label+*,
 .flex-inner {
-    flex: 1 1 12em;
+    flex: 0.3 1 12em;
 }
 
 .flex-outer li p {
@@ -9084,4 +9085,21 @@ Recommendations page
  */
 }
 
+.flex-sign-outer {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+  }
 
+  .flex-sign-inner {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1 1 12px;
+  }
+
+.sign-header{
+    margin-left: 45px;
+}

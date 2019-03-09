@@ -18,8 +18,9 @@
                         <a href="./public/pages/pet-input-dog.php" class="index-anchor">
                             <div class="panel panel-default">
 
+                                <div class="dog_image"></div>   
 
-                                <img width="100%" src="./public/images/dog.png" alt="Picture of a dog">
+                                <!-- <img width="100%" src="./public/images/dog.png" alt="Picture of a dog"> -->
 
 
                             </div>
@@ -31,9 +32,11 @@
                         <a href="./public/pages/pet-input-cat.php" class="index-anchor">
                             <div class="panel panel-default">
 
+                                <div class="cat_image"></div>     
 
-                                <img width="100%" src="./public/images/cat.png" alt="Picture of a cat">
-
+                               <!--  
+                                   <img width="100%" src="./public/images/cat.png" alt="Picture of a cat">
+ -->
 
                             </div>
                         </a>
@@ -51,5 +54,6 @@
 
         </div>
     </div>
-
+    <script src="./private/js/fetch_random_cat_image.js"></script>
+    <script src="./private/js/fetch_random_dog_image.js"></script>
     <?php include('./private/shared/footer.php'); ?>

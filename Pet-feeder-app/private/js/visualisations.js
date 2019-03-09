@@ -384,5 +384,3 @@ svg.append("text")
       .attr("class", "legend")
       //      .style("text-anchor", "middle")
       .text("Date");
-
-console.log(window.innerWidth);

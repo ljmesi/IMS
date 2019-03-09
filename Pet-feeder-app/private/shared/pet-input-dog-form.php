@@ -4,6 +4,7 @@
             <li>
                 <label for="dog_breed">Dog breed</label>
                 <select id="dog_breed" name = "dog_breed">
+                    <option value=" Select">Select</option>
                     <option value=" Affenpinscher">Affenpinscher</option>
                     <option value=" Afghan Hound">Afghan Hound</option>
                     <option value=" Airedale Terrier">Airedale Terrier</option>

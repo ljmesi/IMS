@@ -1,6 +1,7 @@
         <li>
             <label for="health_considerations">Health considerations</label>
             <select id="health_considerations" name="Health Considerations">
+                <option value="Select">Select</option>
                 <option value="Pregnant">Pregnant</option>
                 <option value="Kidney disease">Kidney disease</option>
                 <option value="Nursing">Nursing</option>
@@ -24,6 +25,7 @@
         <li>
             <label for="diet">Diet</label>
             <select name="diet" id="diet">
+                <option value="Select">Select</option>
                 <optgroup label="Raw">
                     <option value="raw_grain_free">Raw grain free</option>
                     <option value="raw_limited_diet">Raw limited diet</option>
@@ -45,6 +47,7 @@
         <li>
             <label for="activity_level">Activity level</label>
             <select id="activity_level" name="activity_level">
+                <option value="Select">Select</option>
                 <option value="Active">Active</option>
                 <option value="Normal">Normal</option>
                 <option value="Less_active">Less active</option>

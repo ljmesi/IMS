@@ -11,8 +11,6 @@
 
                     </div>
 
-
-
                     <div class="row">
 
                     </div>
@@ -22,7 +20,9 @@
                 <div class="col-md-4 mt20">
                     <div class="post-img">
 
-                        <img width="600" src="../images/cat.png" alt="An image of a cat">
+                    <div class="cat_image"></div> 
+<!-- 
+                        <img width="600" src="../images/cat.png" alt="An image of a cat"> -->
 
                     </div>
 
@@ -36,9 +36,6 @@
         </div>
     </div>
 
-
-
-
-
+    <script src="../../private/js/fetch_random_cat_image.js"></script>
 
     <?php include(SHARED_PATH . '/footer.php'); ?>

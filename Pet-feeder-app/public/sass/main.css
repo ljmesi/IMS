@@ -1426,7 +1426,7 @@ body {
     font-size: 20px;
     line-height: 1.6;
     color: #333333;
-    background-color: #ffffff
+    background-color: #F9F5FF 
 }
 
 a {
@@ -1597,7 +1597,8 @@ h5,
 h6,
 .h6 {
     margin-top: 11px;
-    margin-bottom: 11px
+    margin-bottom: 11px;
+    margin-left: 20px
 }
 
 h4 small,
@@ -4457,7 +4458,8 @@ tbody.collapse.in {
     list-style: none;
     font-size: 16px;
     text-align: left;
-    background-color: #ffffff;
+/*    background-color: #ffffff; */
+     background-color: #F9F5FF; 
     border: 1px solid #cccccc;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -8506,7 +8508,8 @@ img {
 }
 
 footer {
-    border-top: 1px solid #e8e8e8
+    border-top: 1px solid #e8e8e8;
+    margin-top: 30px
 }
 
 .social {
@@ -8976,7 +8979,7 @@ input {
 
 .flex-outer>li>label+*,
 .flex-inner {
-    flex: 1 1 12em;
+    flex: 0.3 1 12em;
 }
 
 .flex-outer li p {
@@ -9023,7 +9026,7 @@ input {
 div.tooltip {
     position: absolute;
     text-align: center;
-    width: 54px;
+    width: 70px;
     height: 48px;
     padding: 2px;
     font: 12px sans-serif;
@@ -9061,8 +9064,42 @@ path {
 .legend:hover{
     cursor: pointer;
 }
-/* 
-.blueDots 
-.redDots {
-    opacity: 1;
-} */
+
+/*
+Recommendations page
+*/
+.flex-container-recommendation{
+    /* display: inline-flex; */
+    display: flex;
+    flex-direction: column;
+ /*
+    flex-direction: row;
+   
+    flex-direction: row;
+ 
+    
+
+    flex-direction: column-reverse;
+
+    
+ */
+}
+
+.flex-sign-outer {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+  }
+
+  .flex-sign-inner {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1 1 12px;
+  }
+
+.sign-header{
+    margin-left: 45px;
+}

@@ -16,4 +16,10 @@ define("DB_PATH", PRIVATE_PATH . '/db');
 // Just testing if this script is run
 // echo '<script>console.log({$var})</script>';
 
+// Define default variable name for storing the particular pet species name
+$pet_species = $pet_species ?? "pet"; 
+
+// How to capitalise the first letter
+// echo ucfirst("pet");
+
 ?>

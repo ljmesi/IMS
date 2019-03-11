@@ -128,8 +128,6 @@ CREATE TABLE diet_tag_map (
         REFERENCES diet (dID),
     CONSTRAINT tag_fk FOREIGN KEY (tagID)
         REFERENCES tags (tagID)
-<<<<<<< HEAD
-=======
 );
 
 DROP TABLE IF EXISTS Dog_Food_table;
@@ -140,5 +138,4 @@ CREATE TABLE Dog_Food_table (
     Low_activity FLOAT(15 , 12 ),
     Normal_activity FLOAT(15 , 12 ),
     diet_type VARCHAR(45)
->>>>>>> origin
 );

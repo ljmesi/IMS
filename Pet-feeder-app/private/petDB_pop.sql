@@ -288,7 +288,3 @@ VALUES
 
 INSERT INTO diet_health_tag_map (dID, tagID) 
 SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
-
-insert into Pet (type_of_pet , food_rec, food_amount ) VALUES(("dog", , 83.4);
-
-ALTER TABLE age_activity_diet_health ADD COLUMN amount_percent FLOAT;

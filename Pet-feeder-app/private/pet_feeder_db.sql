@@ -15,7 +15,7 @@ CREATE TABLE Pet (
 drop table if exists pet_owner;
 CREATE TABLE pet_owner (
     oID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    pet_id INT,
+    pet_id INT default '0',
     email VARCHAR(45) NOT NULL,
     own_password VARCHAR(255) NOT NULL,
      FOREIGN KEY (pet_id)
@@ -98,4 +98,3 @@ CREATE TABLE diet_tag_map (
     CONSTRAINT tag_fk FOREIGN KEY (tagID)
         REFERENCES tags (tagID)
 );
-??ALTER TABLE diet_health_tag_map ADD hID INT, ADD CONSTRAINT health_fk FOREIGN KEY(hID) REFERENCES health(hID) 

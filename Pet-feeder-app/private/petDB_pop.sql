@@ -367,7 +367,7 @@ insert into dog_adult_diet
 ("xlarge",46000,0.11,0.091,0.081,"wet grain free");
 
 
-insert into Senior_Dog_diet
+insert into dog_senior_diet
  (size, body_weight, High_Normal_activity, Low_activity, Diet)
  VALUES
 ("small",9000,0.02077778,0.01811,"dry grain free"),
@@ -467,6 +467,3 @@ VALUES
 INSERT INTO diet_tag_map (dID, tagID) 
 SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
 
-insert into Pet (type_of_pet , food_rec, food_amount ) VALUES(("dog", , 83.4);
-
-ALTER TABLE age_activity_diet_health ADD COLUMN amount_percent FLOAT;

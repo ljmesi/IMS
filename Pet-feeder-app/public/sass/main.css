@@ -5223,6 +5223,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     position: relative;
     min-height: 65px;
     margin-bottom: 22px;
+    margin-left: 17px;
     border: 1px solid transparent
 }
 
@@ -8485,7 +8486,7 @@ img {
 }
 
 @media screen and (max-width: 600px) {
-    .navbar-brand {
+    .sign-header {
         font-size: 1.5em
     }
 }
@@ -9129,5 +9130,5 @@ minimum 100 and 200 px
 
 
 .sign-header {
-    margin-left: 45px;
+    margin-left: 58px;
 }

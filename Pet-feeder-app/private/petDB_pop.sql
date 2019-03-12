@@ -288,10 +288,6 @@ VALUES
 ("pregnant"),
 ("nursing");
 
-<<<<<<< HEAD
-INSERT INTO diet_health_tag_map (dID, tagID) 
-SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
-=======
 insert into dog_adult_diet
  (size, body_weight, High_activity, Normal_activity, Low_activity, diet)
  VALUES
@@ -469,4 +465,3 @@ VALUES
 INSERT INTO diet_tag_map (dID, tagID) 
 SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
 
->>>>>>> origin

@@ -1,10 +1,13 @@
 <?php include('../../private/initialise.php') ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
 <style>
 form {
     border: 3px solid #f1f1f1;
-    margin: 40px 0 10px 0;
+    margin: 40px 3 10px 0;
 }
 
 input[type=email], input[type=password] {
@@ -27,7 +30,7 @@ button {
 }
 
 button:hover {
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 .cancelbtn {
@@ -36,10 +39,11 @@ button:hover {
     background-color: #f44336;
 }
 
-/*imgcontainer {
+imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
-*/
+}
+
 /*img.avatar {
     width: 40%;
     border-radius: 50%;
@@ -52,10 +56,10 @@ button:hover {
     margin-left: 450px;
 }*/
 
-span.psw {
+/*span.psw {
     float: right;
     padding-top: 16px;
-}
+}*/
 
 /* Change styles for span and cancel button on extra small screens */
 /*@media screen and (max-width: 300px) {
@@ -67,11 +71,23 @@ span.psw {
        width: 100%;
     }
 }*/
+.form-submit-button {
+background: #0066A2;
+color: white;
+border-style: outset;
+border-color: #0066A2;
+height: 50px;
+width: 100px;
+font: bold 15px arial, sans-serif;
+text-shadow:none;
+}
+.submit {
+  font-size: 20px;
+}
+img {
+  width: 100px;
+}
 </style>
-
-<head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-</head>
 
 <body>
 <h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
@@ -87,11 +103,13 @@ span.psw {
     <label><b>Confirm Password</b></label>
     <input type="password" placeholder="Enter the same password as above" required name="psw2">
     <br>
-    <p><img src="captcha.php" id="captcha"><p>
+    <img src="captcha.php" id="captcha">&nbsp;
+    <input type="button" id="reload" value="Reload Captcha"/>
     <br>
-    <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>&nbsp;<input type="button" id="reload" value="Reload"/>
+    <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>
     <br>
     <input type="submit" value="Sign Up">
+    <br>
     <p>
   		Already a member? <a href="sign-in.php">Sign in</a>
   	</p>

@@ -16,9 +16,9 @@ for ($i = 0; $i < 5; $i++)
 }
 $_SESSION['captcha'] = strtolower( $randomString );
 
-$im = @imagecreatefromjpeg('./captcha.jpg'); 
+$im = @imagecreatefromjpeg('captcha.jpg'); 
 $text_color = imagecolorallocate($im, 233, 14, 91);
-imagestring($im, 6, 16, 5,  $randomString, $text_color);
+imagestring($im, 2, 15, 2,  $randomString, $text_color);
 header('Content-type: image/jpeg');
 imagejpeg($im);
 imagedestroy($im);

@@ -9105,7 +9105,7 @@ Inside the inner flexbox, label and input should
 not grow or shrink at all and should take at 
 minimum 100 and 200 px 
 */
-.flex-sign-inner label{
+/*.flex-sign-inner label{
     flex: 0 0 100px;
     margin: 8px;
     
@@ -9114,7 +9114,7 @@ minimum 100 and 200 px
 .flex-sign-inner input{
     flex: 0 0 200px;
     margin: 8px;
-}
+}*/
 
 /*.flex-sign-inner img{
     flex: 0 0 100px;

@@ -8,7 +8,7 @@ form {
 }
 
 input[type=email], input[type=password] {
-    width: 25%;
+    width: 95%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;

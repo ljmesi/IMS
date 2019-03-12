@@ -32,7 +32,7 @@ if(strtolower($_POST['answer']) == $_SESSION['captcha'])
   	    mysqli_query($db, $query);
   	    $_SESSION['email'] = $email;
   	    $_SESSION['success'] = "You are now logged in";
-  	    header('location: sign-in.php');
+  	    echo $_SESSION['success'];
     }
 }
 else {

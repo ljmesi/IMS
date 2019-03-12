@@ -8,6 +8,10 @@ form {
     margin: 20px 0 10px 0;
 }
 
+div[class="container"]{
+    height: 320px;
+}
+
 input[type=email], input[type=password] {
     width: 95%;
     padding: 12px 20px;
@@ -78,7 +82,6 @@ span.psw {
 <h2 align="center">Login</h2>
 <div class="container"> 
     <form action='login_check.php' method="post" autocomplete="off">
-    <div class="container">
     <label><b>Email Address</b></label>
     <input type="email" placeholder="Enter Email address" name="emailaddr" required>
     <br>
@@ -87,13 +90,6 @@ span.psw {
     <br>
     <input type="submit" value="Sign In">
     </form>
-<script>
-    $(function () { // Handler for .ready() called.
-        $('#reload').click(function () {
-        $('#captcha').attr('src', 'captcha.php?' + (new Date).getTime());
-        });
-});
-</script>
 </div>
 </body>
 </html>

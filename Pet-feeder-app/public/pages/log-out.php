@@ -1,7 +1,7 @@
 <?php
    session_start();
-   unset($_SESSION["email"]);
-   unset($_SESSION["psw"]);
+   unset($_SESSION['email']);
+   //unset($_SESSION["psw"]);
    session_destroy();
    
    //echo 'You have cleaned session';

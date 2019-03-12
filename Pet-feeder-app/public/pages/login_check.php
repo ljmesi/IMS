@@ -1,4 +1,4 @@
-<?php include('../../private/initialise.php') ?>
+<?php include('../../private/initialise.php'); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <?php
 session_start();
@@ -15,9 +15,9 @@ if ( ! empty( $_POST ) ) {
         // Verify user password and set $_SESSION
         $hash_password = md5($_POST['psw']);
     	if ( strcmp($hash_password,$user[1]) == 0 ) {
-            $_SESSION['user_id'] = $user[0];
-            echo "test";
-            header('Location: http://localhost/IMS/Pet-feeder-app/index.php');
+            $_SESSION['email'] = $user[0];
+            //echo "test";
+            header('Location: http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php');
         }
         else {
             echo "<h2>Oops, email does not exist with us. Try login again.</h2>";

@@ -2,15 +2,15 @@
 <?php include(SHARED_PATH . '/header.php'); ?>
 <html>
 <style>
+
 form {
-    border: 3px solid #f1f1f1;
+    /* border: 3px solid #f1f1f1; */
     margin: 40px 0 10px 0;
 }
 
 input[type=email], input[type=password] {
-    width: 95%;
+    width: 25%;
     padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -20,7 +20,7 @@ button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -70,31 +70,36 @@ span.psw {
 </style>
 
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
-<h2 align="center" color="red">Login</h2>
-<div class="container"> 
-    <form action='login_check.php' method="post" autocomplete="off">
+    <h4 class="sign-header">Login</h4>
     <div class="container">
-    <label><b>Email Address</b></label>
-    <input type="email" placeholder="Enter Email address" name="emailaddr" required>
-    <br>
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-    <br>
-    <input type="submit" value="Sign In">
-</form>
-<script>
-        $(function() { // Handler for .ready() called.
-            $('#reload').click(function(){
-                $('#captcha').attr('src', 'captcha.php?' + (new Date).getTime());
+        <form action='' method="post" autocomplete="off" class="flex-sign-outer">
+            <div class="flex-sign-inner">
+                <label><b>Email Address</b></label>
+                <input type="email" placeholder="Enter Email address" name="emailaddr" required>
+            </div>
+            <div class="flex-sign-inner">
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+            <div>
+                <input type="submit" value="Sign In">
+            </div>
+        </form>
+
+        <script>
+            $(function () { // Handler for .ready() called.
+                $('#reload').click(function () {
+                    $('#captcha').attr('src', 'captcha.php?' + (new Date).getTime());
+                });
             });
-        });
-</script>
-</div>
+        </script>
+    </div>
 </body>
+
 </html>
-      
+
 <?php include(SHARED_PATH . '/footer.php'); ?>

@@ -1426,7 +1426,7 @@ body {
     font-size: 20px;
     line-height: 1.6;
     color: #333333;
-    background-color: #F9F5FF 
+    background-color: #F9F5FF
 }
 
 a {
@@ -4458,8 +4458,8 @@ tbody.collapse.in {
     list-style: none;
     font-size: 16px;
     text-align: left;
-/*    background-color: #ffffff; */
-     background-color: #F9F5FF; 
+    /*    background-color: #ffffff; */
+    background-color: #F9F5FF;
     border: 1px solid #cccccc;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -9058,21 +9058,21 @@ path {
     font-size: 16px;
     font-weight: bold;
     text-anchor: start;
-    
+
 }
 
-.legend:hover{
+.legend:hover {
     cursor: pointer;
 }
 
 /*
 Recommendations page
 */
-.flex-container-recommendation{
+.flex-container-recommendation {
     /* display: inline-flex; */
     display: flex;
     flex-direction: column;
- /*
+    /*
     flex-direction: row;
    
     flex-direction: row;
@@ -9086,20 +9086,35 @@ Recommendations page
 }
 
 .flex-sign-outer {
-    display: flex; /* or inline-flex */
+    display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    
-  }
+    justify-content: center
+}
 
-  .flex-sign-inner {
-    display: flex; /* or inline-flex */
+
+.flex-sign-inner {
+    display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    flex: 1 1 12px;
-  }
+}
 
-.sign-header{
+/* 
+Inside the inner flexbox, label and input should
+not grow or shrink at all and should take at 
+minimum 100 and 200 px 
+*/
+.flex-sign-inner label{
+    flex: 0 0 100px;
+    margin: 8px;
+    
+}
+
+.flex-sign-inner input{
+    flex: 0 0 200px;
+    margin: 8px;
+}
+
+.sign-header {
     margin-left: 45px;
 }

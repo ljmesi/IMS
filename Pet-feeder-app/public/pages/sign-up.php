@@ -19,6 +19,12 @@ input[type=email], input[type=password] {
     box-sizing: border-box;
 }
 
+input[type=submit]{
+    width: 70px;
+    height: 29px;
+    font-size: 12px;
+    font: bold 13px arial;
+}
 button {
     background-color: #4CAF50;
     color: white;
@@ -71,19 +77,6 @@ imgcontainer {
        width: 100%;
     }
 }*/
-.form-submit-button {
-background: #0066A2;
-color: white;
-border-style: outset;
-border-color: #0066A2;
-height: 50px;
-width: 100px;
-font: bold 15px arial, sans-serif;
-text-shadow:none;
-}
-.submit {
-  font-size: 20px;
-}
 img {
   width: 100px;
 }
@@ -108,11 +101,8 @@ img {
     <br>
     <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>
     <br>
-    <input type="submit" value="Sign Up">
-    <br>
-    <p>
-  		Already a member? <a href="sign-in.php">Sign in</a>
-  	</p>
+    <input type="submit" value="Sign Up"><br><br>
+    <label>Already a member?</label>&nbsp;<a href="sign-in.php">Sign in</a>
 </form>
 <script>
         $(function() { // Handler for .ready() called.

@@ -1,10 +1,12 @@
 <?php include('../../private/initialise.php') ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <html>
+
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <style>
+
 form {
     border: 3px solid #f1f1f1;
     margin: 40px 3 10px 0;
@@ -13,7 +15,7 @@ form {
 input[type=email], input[type=password] {
     width: 95%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -29,14 +31,14 @@ button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px;
     border: none;
     cursor: pointer;
     width: 100%;
 }
 
 button:hover {
-    opacity: 0.5;
+    opacity: 0.5; /* 0.8; */
 }
 
 .cancelbtn {
@@ -45,12 +47,18 @@ button:hover {
     background-color: #f44336;
 }
 
+/* 
+img {
+  width: 100px;
+}
+ */
+/*
 imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
 }
 
-/*img.avatar {
+img.avatar {
     width: 40%;
     border-radius: 50%;
 }*/
@@ -77,42 +85,58 @@ imgcontainer {
        width: 100%;
     }
 }*/
-img {
-  width: 100px;
-}
+
 </style>
 
 <body>
-<h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
-<div class="container"> 
-    <form action='captcha-validate.php' method="post" autocomplete="off">
+    <h4 class="sign-header">New User with Us? Sign Up Here!!!</h4>
     <div class="container">
-    <label><b>Email Address</b></label>
-    <input type="email" placeholder="Enter Email address" name="emailaddr" required>
-    <br>
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Password must contain at least 6 characters, including UPPER/lowercase and numbers" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" onchange="form.psw2.pattern = RegExp.escape(this.value);">
-    <br>
-    <label><b>Confirm Password</b></label>
-    <input type="password" placeholder="Enter the same password as above" required name="psw2">
-    <br>
-    <img src="captcha.php" id="captcha">&nbsp;
-    <input type="button" id="reload" value="Reload Captcha"/>
-    <br>
-    <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>
-    <br>
-    <input type="submit" value="Sign Up"><br><br>
-    <label>Already a member?</label>&nbsp;<a href="sign-in.php">Sign in</a>
-</form>
-<script>
-        $(function() { // Handler for .ready() called.
-            $('#reload').click(function(){
-                $('#captcha').attr('src', 'captcha.php?' + (new Date).getTime());
+        <form action='captcha-validate.php' method="post" autocomplete="off" class="flex-sign-outer">
+
+            <div class="flex-sign-inner">
+                <label><b>Email Address</b></label>
+                <input type="email" placeholder="Enter Email address" name="emailaddr" required>
+            </div>
+
+            <div class="flex-sign-inner">
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Password must contain at least 6 characters, including UPPER/lowercase and numbers"
+                    required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" onchange="form.psw2.pattern = RegExp.escape(this.value);">
+            </div>
+
+            <div class="flex-sign-inner">
+                <label><b>Confirm Password</b></label>
+                <input type="password" placeholder="Enter the same password as above" required name="psw2">
+            </div>
+
+            <div class="flex-sign-inner">
+                <img src="captcha.php" id="captcha">&nbsp;
+                <input type="button" id="reload" value="Reload Captcha" />
+            </div>
+
+            <div class="flex-sign-inner">
+                <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10" />
+            </div>
+
+            <div class="flex-sign-inner">
+                <input type="submit" value="Sign Up">
+            </div>
+
+            <div class="flex-sign-inner">
+                <label>Already a member?</label>&nbsp;<a href="sign-in.php">Sign in</a>
+            </div>
+
+        </form>
+        <script>
+            $(function () { // Handler for .ready() called.
+                $('#reload').click(function () {
+                    $('#captcha').attr('src', 'captcha.php?' + (new Date).getTime());
+                });
             });
-        });
-</script>
-</div>
+        </script>
+    </div>
 </body>
+
 </html>
-      
+
 <?php include(SHARED_PATH . '/footer.php'); ?>

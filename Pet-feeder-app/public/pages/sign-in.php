@@ -4,7 +4,7 @@
 <style>
 
 form {
-    /* border: 3px solid #f1f1f1; */
+    border: 3px solid #f1f1f1; 
     margin: 40px 0 10px 0;
 }
 

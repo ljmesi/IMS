@@ -9106,7 +9106,7 @@ not grow or shrink at all and should take at
 minimum 100 and 200 px 
 */
 .flex-sign-inner label{
-    flex: 0 0 130px;
+    flex: 0 0 100px;
     margin: 8px;
     
 }
@@ -9116,7 +9116,7 @@ minimum 100 and 200 px
     margin: 8px;
 }
 
-.flex-sign-inner img{
+/*.flex-sign-inner img{
     flex: 0 0 100px;
     margin-left: 8px;
     margin-right: 46px;
@@ -9126,7 +9126,7 @@ minimum 100 and 200 px
 .flex-sign-inner input[type=button]{
     width: 210px;
     
-}
+}*/
 
 
 .sign-header {

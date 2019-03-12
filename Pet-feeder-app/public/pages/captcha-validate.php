@@ -27,7 +27,7 @@ if(strtolower($_POST['answer']) == $_SESSION['captcha'])
     // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
         //encrypt the password before saving in the database
-  	    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+  	    $password_hash = md5($password);
         $query = "INSERT INTO pet_owner (email, own_password) VALUES('$email', '$password_hash')";
   	    mysqli_query($db, $query);
   	    $_SESSION['email'] = $email;

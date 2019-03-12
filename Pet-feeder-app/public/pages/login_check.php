@@ -15,13 +15,13 @@ if ( ! empty( $_POST ) ) {
         // Verify user password and set $_SESSION
         $hash_password = md5($_POST['psw']);
     	if ( strcmp($hash_password,$user[1]) == 0 ) {
-            echo "<h2>Oops, email does not exist with us. Try login again.</h2>";
-            echo "<h4><a href='sign-in.php'>Login</a></h4>";
-        }
-        else {
             $_SESSION['user_id'] = $user[0];
             echo "test";
             header('Location: http://localhost/IMS/Pet-feeder-app/index.php');
+        }
+        else {
+            echo "<h2>Oops, email does not exist with us. Try login again.</h2>";
+            echo "<h4><a href='sign-in.php'>Login</a></h4>";
         }
 
     }

@@ -17,6 +17,7 @@
   <!-- <script src="https://d3js.org/d3-dsv.v1.min.js" defer></script>
   <script src="https://d3js.org/d3-fetch.v1.min.js" defer></script> -->
   <script type="text/javascript" src="../../private/js/visualisations.js" defer></script>
+  <script type="text/javascript" src="../../private/js/scripts.js" defer></script>
 
 </head>
 

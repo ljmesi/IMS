@@ -100,13 +100,14 @@ img.avatar {
 
             <div class="flex-sign-inner">
                 <label><b>Password</b></label>
-                <input type="password" placeholder="Password must contain at least 6 characters, including UPPER/lowercase and numbers"
-                    required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" onchange="form.psw2.pattern = RegExp.escape(this.value);">
+                <input type="password" placeholder="Enter Password"
+                    required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" onchange="form.psw2.pattern = RegExp.escape(this.value);" 
+                    data-toggle="tooltip" title="The password must contain at least 6 characters, including UPPER and lowercase letters and numbers">
             </div>
 
             <div class="flex-sign-inner">
                 <label><b>Confirm Password</b></label>
-                <input type="password" placeholder="Enter the same password as above" required name="psw2">
+                <input type="password" placeholder="Enter the same password" required name="psw2">
             </div>
 
             <div class="flex-sign-inner">

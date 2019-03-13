@@ -42,7 +42,14 @@ session_start();
         <td><input type="text" value="<?php echo $_SESSION['email'] ?>" readonly></td>
         </tr>
         </table>
-        <p><input type="button" value="Pet info" onclick()="http://localhost/IMS/Pet-feeder-app/index.php"></p>
+        <p><button id="pet-info" class="float-left submit-button">Pet-info</button></p>
+
+        <script type="text/javascript">
+            document.getElementById("pet-info").onclick = function () {
+            location.href = "http://localhost/IMS/Pet-feeder-app/index.php";
+            };
+        </script>
+
         <h6 align='center'>Change Password</h6>
         <form method="POST" action="passwordchange.php">
         <table>

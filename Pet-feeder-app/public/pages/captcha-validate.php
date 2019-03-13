@@ -10,7 +10,7 @@ if(strtolower($_POST['answer']) == $_SESSION['captcha'])
     $errors = array(); 
 
     // connect to the database
-    $db = mysqli_connect('localhost', 'root', '', 'Pet_feeder');
+    $db = mysqli_connect('localhost', 'root', '', 'pet_feeder');
 
     // first check the database to make sure 
     // a user does not already exist with the same username and/or email

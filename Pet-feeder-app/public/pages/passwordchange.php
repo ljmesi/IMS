@@ -27,14 +27,14 @@
 		//success
 		//change pass in db
 			$querychange = mysqli_query($connect,"UPDATE pet_owner SET own_password='$newpassword' WHERE email='$useremail'");
-			session_destroy();
-			die("Your pass has been changed.<a href='loggedin.php'>Return</a> to the main page");
+            session_destroy();
+            die("Your password has been changed successfully. You need to <a href='sign-in.php'>Login</a> to your account again.");
 		}
 		else
-			die("New Pass don't match");
+			die("New Passwords don't match");
 	}
 		else
-			die("Old Pass doesn't match");
+			die("Old Password doesn't match");
 }
 	else
 		   die("You must be logged in to change your password");

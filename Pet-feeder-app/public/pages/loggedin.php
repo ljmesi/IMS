@@ -42,14 +42,10 @@ session_start();
         <td><input type="text" value="<?php echo $_SESSION['email'] ?>" readonly></td>
         </tr>
         </table>
-        <p><input type="button" value="Pet info" onclick()="#"></p>
+        <p><input type="button" value="Pet info" onclick()="http://localhost/IMS/Pet-feeder-app/index.php"></p>
         <h6 align='center'>Change Password</h6>
         <form method="POST" action="passwordchange.php">
         <table>
-        <tr>
-        <td>Enter your UserName</td>
-        <td><input type="email" size="10" required name="username"></td>
-        </tr>
         <tr>
         <td>Enter your existing password</td>
         <td><input type="password" size="10" required name="oldpassword"></td>

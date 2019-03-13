@@ -20,8 +20,7 @@ if ( ! empty( $_POST ) ) {
             header('Location: http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php');
         }
         else {
-            echo "<h2>Oops, email does not exist with us. Try login again.</h2>";
-            echo "<h4><a href='sign-in.php'>Login</a></h4>";
+            echo "<h4>Oops, email or password doesnot match. Try <a href='sign-in.php'>Login</a> again.</h4>";
         }
 
     }

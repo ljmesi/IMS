@@ -60,7 +60,7 @@
                 <legend>Gender</legend>
                 <ul class="flex-inner">
                     <li>
-                        <input type="radio" name="sex" value="male" id="male" checked><label
+                        <input type="radio" name="sex" value="male" id="male"><label
                             for="male">male</label>
                     </li>
                             
@@ -79,7 +79,7 @@
                 <legend>Neutering</legend>
                 <ul class="flex-inner">
                     <li>
-                        <input type="radio" name="neutered" value="intact" id="red" checked><label
+                        <input type="radio" name="neutered" value="intact" id="red"><label
                             for="intact">intact</label>
                     </li>
                             

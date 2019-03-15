@@ -40,7 +40,6 @@
           <a class="navbar-brand" href="../../index.php">Pet Feeder App</a>
         </div>
 
-
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -55,6 +54,7 @@
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   </header>

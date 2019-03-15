@@ -44,12 +44,12 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                aria-expanded="false">Sign in <span class="caret"></span></a>
+                aria-expanded="false">Home<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php" title="link to sign in page">Sign in</a></li>
-                <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/sign-up.php" title="link to sign up page">Sign up</a></li>
+                <li><a href="http://localhost/IMS/Pet-feeder-app/index.php" title="link to sign in page">Home</a></li>
+                <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/sign-up.php" title="link to sign up page">Register</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/log-out.php" title="link to log out page">Log out</a></li>
+                <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php" title="link to log out page">Login</a></li>
               </ul>
             </li>
           </ul>

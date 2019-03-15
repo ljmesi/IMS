@@ -2,6 +2,9 @@
 <?php include(SHARED_PATH . '/header.php');?>
 <?php include('../../public/pages/functions.php');?>
 <?php
+session_start();
+?>
+<?php
 if (isset($_POST['submit'])) {
     echo "test";
     //recommendation page of non user displayed

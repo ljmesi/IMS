@@ -1,6 +1,7 @@
+<?php include('../../private/initialise.php');?>
+<?php include(SHARED_PATH . '/header.php');?>
 <?php include('../../public/pages/functions.php');?>
 <?php
-print_r($_POST);
 if (isset($_POST['submit'])) {
     echo "test";
     //recommendation page of non user displayed
@@ -44,3 +45,4 @@ if (isset($_POST['submit'])) {
 else 
     die('Enter all details first');
 ?>
+<?php include(SHARED_PATH . '/footer.php'); ?>

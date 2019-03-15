@@ -1,6 +1,7 @@
 <?php include('../../public/pages/functions.php');?>
 <?php
-if (!empty($_POST)) {
+print_r($_POST);
+if (isset($_POST['submit'])) {
     echo "test";
     //recommendation page of non user displayed
     //header('Location: http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php');

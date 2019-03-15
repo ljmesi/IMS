@@ -93,7 +93,7 @@
         </li>
 
         <li>
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit">
         </li>
     </ul>
 </form> 

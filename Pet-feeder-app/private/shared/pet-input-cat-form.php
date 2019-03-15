@@ -3,7 +3,7 @@
         <ul class="flex-outer">
             <li>
                 <label for="cat_breed">Cat breed</label>
-                <select id="cat_breed" name="cat_breed">
+                <select id="cat_breed" name="cat_breed" required>
                     <option value="">Select</option>
                     <option value="Regular Domestic Cat">Regular Domestic Cat</option>
                     <option value="Large Domestic Cat">Large Domestic Cat</option>

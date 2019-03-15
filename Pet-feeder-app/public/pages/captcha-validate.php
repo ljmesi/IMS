@@ -32,11 +32,12 @@ if(strtolower($_POST['answer']) == $_SESSION['captcha'])
   	    mysqli_query($db, $query);
   	    $_SESSION['email'] = $email;
   	    $_SESSION['success'] = "You are now logged in";
-  	    echo $_SESSION['success'];
+  	    header('Refresh: 0; URL = loggedin.php');
     }
 }
 else {
-    echo 'Sorry, captcha not solved. Offer user captcha again or what ever.';
+    //die('Sorry, captcha not solved. Offer user captcha again or what ever.');
+    header('Refresh: 0; URL = sign-up.php');
 }
 unset($_SESSION['captcha']);
 //EDIT: I haven't posted this before but you should unset captcha from session, or destroy session.

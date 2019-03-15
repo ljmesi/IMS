@@ -1,24 +1,29 @@
 <?php include('../../private/initialise.php') ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 <html>
-
 <head>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-</head>
-<style>
+    <style>
 
-form {
-    /*border: 3px solid #f1f1f1;*/
+/*form {
+    border: 3px solid #f1f1f1;
     margin: 10px 10px;
-}
+}*/
 
 input[type=email], input[type=password] {
-    width: 98%;
+    width: 12em;
+    height: 2.55em;
+    padding: 5px;
+    margin: 10px 0px 10px 0;
+    border-radius: 7px;
+    background-color: #fdedec;
+    order: 1;
+    /*width: 98%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
 }
 
 input[type=submit]{
@@ -27,7 +32,7 @@ input[type=submit]{
     font-size: 12px;
     font: bold 13px arial;
 }
-button {
+/*button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -35,7 +40,7 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
-}
+}*/
 
 button:hover {
     opacity: 0.5; /* 0.8; */
@@ -63,12 +68,13 @@ img.avatar {
     border-radius: 50%;
 }*/
 
-/*.container {
+.container {
     padding: 16px;
-    width: 300px;
+    width: 450px;
+    height: 300px;
     margin: 24px 0 12px 0;
     margin-left: 450px;
-}*/
+}
 
 /*span.psw {
     float: right;
@@ -85,8 +91,8 @@ img.avatar {
        width: 100%;
     }
 }*/
-
 </style>
+</head>
 
 <body>
     <h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
@@ -98,7 +104,8 @@ img.avatar {
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" 
         required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" 
-        onchange="form.psw2.pattern = RegExp.escape(this.value);" data-toggle="tooltip" 
+        onchange="form.psw2.pattern = RegExp.escape(this.value);" 
+        data-toggle="tooltip" 
         title="The password must contain at least 6 characters, including UPPER and lowercase letters and numbers">
         <br>
         <label><b>Confirm Password</b></label>

@@ -3,8 +3,8 @@
         <ul class="flex-outer">
             <li>
                 <label for="dog_breed">Dog breed</label>
-                <select id="dog_breed" name = "dog_breed">
-                    <option value=" Select">Select</option>
+                <select id="dog_breed" name="dog_breed" required>
+                    <option value="">Select</option>
                     <option value=" Affenpinscher">Affenpinscher</option>
                     <option value=" Afghan Hound">Afghan Hound</option>
                     <option value=" Airedale Terrier">Airedale Terrier</option>

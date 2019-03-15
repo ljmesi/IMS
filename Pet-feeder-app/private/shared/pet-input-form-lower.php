@@ -1,7 +1,7 @@
         <li>
             <label for="health_considerations">Health considerations</label>
             <select id="health_considerations" name="Health Considerations">
-                <option value="Select">Select</option>
+                <option value="">Select</option>
                 <option value="Pregnant">Pregnant</option>
                 <option value="Kidney disease">Kidney disease</option>
                 <option value="Nursing">Nursing</option>
@@ -14,18 +14,18 @@
         </li>
         <li>
             <label for="age">Birthdate</label>
-            <input id="age" name="age" type="date">
+            <input required id="age" name="age" type="date">
 
         </li>
         <li>
             <label for="weight">Weight (in lb)</label>
-            <input id="weight" type="number" name="weight" min = "0" max = "250" step = "0.1">   
+            <input required id="weight" type="number" name="weight" min = "0" max = "250" step = "0.1">   
         </li>
 
         <li>
             <label for="diet">Diet</label>
-            <select name="diet" id="diet">
-                <option value="Select">Select</option>
+            <select required name="diet" id="diet">
+                <option value="">Select</option>
                 <optgroup label="Raw">
                     <option value="raw_grain_free">Raw grain free</option>
                     <option value="raw_limited_diet">Raw limited diet</option>
@@ -46,8 +46,8 @@
 
         <li>
             <label for="activity_level">Activity level</label>
-            <select id="activity_level" name="activity_level">
-                <option value="Select">Select</option>
+            <select required id="activity_level" name="activity_level">
+                <option value="">Select</option>
                 <option value="Active">Active</option>
                 <option value="Normal">Normal</option>
                 <option value="Less_active">Less active</option>
@@ -60,7 +60,7 @@
                 <legend>Gender</legend>
                 <ul class="flex-inner">
                     <li>
-                        <input type="radio" name="sex" value="male" id="male"><label
+                        <input type="radio" name="sex" value="male" id="male" required><label
                             for="male">male</label>
                     </li>
                             
@@ -79,7 +79,7 @@
                 <legend>Neutering</legend>
                 <ul class="flex-inner">
                     <li>
-                        <input type="radio" name="neutered" value="intact" id="red"><label
+                        <input type="radio" name="neutered" value="intact" id="red" required><label
                             for="intact">intact</label>
                     </li>
                             

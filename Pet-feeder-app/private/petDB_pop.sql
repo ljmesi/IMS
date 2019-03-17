@@ -383,22 +383,22 @@ insert into dog_senior_diet
 ("xlarge",70000,0.0119285714285714,0.010442857142857,"dry grain free"),
 ("xlarge",80000,0.011575,0.010125,"dry grain free"),
 ("xlarge",90000,0.01126666667,0.009867,"dry grain free"),
-("toy",5000,0.04,0.03656,0.02936,"raw"),
-("medium",10000,0.024,0.02,0.0176,"raw"),
-("large",23000,0.0192,0.0184,0.0176,"raw"),
-("xlarge",46000,0.0184,0.0176,0.0168,"raw"),
-("medium",10000,0.0248,0.0168,0.0184,"raw grain free"),
-("large",23000,0.02,0.0192,0.0184,"raw grain free"),
-("xlarge",46000,0.0192,0.0184,0.0176,"raw grain free"),
-("toy",5000,0.04528,0.0408,0.0328,"wet"),
-("small",8000,0.051,0.0464,0.037,"wet"),
-("medium",10000,0.04528,0.0408,0.032,"wet"),
-("large",23000,0.0404,0.0336,0.024,"wet"),
-("xlarge",46000,0.08,0.072, 0.064,"wet"),
-("toy",5000,0.0456,0.0416,0.0336,"wet grain free"),
-("small",8000,0.052,0.048,0.0368,"wet grain free"),
-("large",23000,0.0412,0.0344,0.0248,"wet grain free"),
-("xlarge",46000,0.088,0.0728,0.0648,"wet grain free");
+("toy",5000,0.04,0.02936,"raw"),
+("medium",10000,0.024,0.0176,"raw"),
+("large",23000,0.0192,0.0176,"raw"),
+("xlarge",46000,0.0184,0.0168,"raw"),
+("medium",10000,0.0248,0.0184,"raw grain free"),
+("large",23000,0.02,0.0184,"raw grain free"),
+("xlarge",46000,0.0192,0.0176,"raw grain free"),
+("toy",5000,0.04528,0.0328,"wet"),
+("small",8000,0.051,0.037,"wet"),
+("medium",10000,0.04528,0.032,"wet"),
+("large",23000,0.0404,0.024,"wet"),
+("xlarge",46000,0.08,0.064,"wet"),
+("toy",5000,0.0456,0.0336,"wet grain free"),
+("small",8000,0.052,0.0368,"wet grain free"),
+("large",23000,0.0412,0.0248,"wet grain free"),
+("xlarge",46000,0.088,0.0648,"wet grain free");
 
 
 insert into dog_pup_diet
@@ -464,4 +464,3 @@ VALUES
 
 INSERT INTO diet_tag_map (dID, tagID) 
 SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
-

@@ -9,6 +9,7 @@ session_start();
 
 <?php else: ?>
     <!-- logged in user information -->
+    <head>
     <style>
     div[class="profile_info"] {
       height: 310px;
@@ -20,7 +21,17 @@ session_start();
     table[name="t1"] {
         width: 20%;
     }
+    input[type=password] {
+    width: 12em;
+    height: 2.05em;
+    padding: 5px;
+    margin: 10px 0px 10px 0;
+    border-radius: 7px;
+    background-color: #fdedec;
+    order: 1;
+    }
     </style>
+    </head>
     <div class="user-logo" align='right'>
             <img src="profileuser.png"><br>
             <?php  if (isset($_SESSION['email'])) : ?>
@@ -34,15 +45,15 @@ session_start();
 
             <?php endif ?>
     </div>
-    <h4 align='center'>My profile</h4>
+    <h3 align='center'>My profile</h3>
     <div class="profile_info" align='center'>
         <table name="t1">
         <tr>
-        <td>Email Address</td>
+        <td><div style="width:150px;">Email Address</div></td>
         <td><input type="text" value="<?php echo $_SESSION['email'] ?>" readonly></td>
         </tr>
         </table>
-        <p><button id="pet-info" class="float-left submit-button">Pet-info</button></p>
+        <p><button id="pet-info" class="float-left submit-button">Goto Pet-input Form</button></p>
 
         <script type="text/javascript">
             document.getElementById("pet-info").onclick = function () {

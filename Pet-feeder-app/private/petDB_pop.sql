@@ -285,7 +285,7 @@ VALUES
 ("cat"),
 ("joint"),
 ("large breed"),
-("pregNULLnt"),
+("pregnant"),
 ("nursing");
 
 insert into dog_adult_diet

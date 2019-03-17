@@ -19,7 +19,7 @@
         </li>
         <li>
             <label for="weight">Weight (in lb)</label>
-            <input required id="weight" type="number" name="weight" min = "0" max = "250" step = "0.1">   
+            <input required id="weight" type="number" name="weight" min = "0" max = "250" step = "0.1">
         </li>
 
         <li>
@@ -27,14 +27,17 @@
             <select required name="diet" id="diet">
                 <option value="">Select</option>
                 <optgroup label="Raw">
+                  <option value="raw">Raw</option>
                     <option value="raw_grain_free">Raw grain free</option>
                     <option value="raw_limited_diet">Raw limited diet</option>
                 </optgroup>
                 <optgroup label="Dry">
+                  <option value="dry">Dry</option>
                     <option value="dry_grain_free">Dry grain free</option>
                     <option value="dry_limited_diet">Dry limited diet</option>
                 </optgroup>
                 <optgroup label="Wet">
+                  <option value="wet">Wet</option>
                     <option value="wet_grain_free">Wet grain free</option>
                     <option value="wet_limited_diet">Wet limited diet</option>
                 </optgroup>
@@ -63,16 +66,16 @@
                         <input type="radio" name="sex" value="male" id="male" required><label
                             for="male">male</label>
                     </li>
-                            
+
                     <li>
                         <input type="radio" name="sex" value="female" id="female"><label
                             for="female">female</label>
                     </li>
-                            
+
                 </ul>
             </fieldset>
         </li>
-            
+
 
         <li>
             <fieldset>
@@ -82,12 +85,12 @@
                         <input type="radio" name="neutered" value="intact" id="red" required><label
                             for="intact">intact</label>
                     </li>
-                            
+
                     <li>
                         <input type="radio" name="neutered" value="neutered" id="blue"><label
                             for="neutered">neutered</label>
                     </li>
-                        
+
                 </ul>
             </fieldset>
         </li>
@@ -96,5 +99,4 @@
             <input type="submit" name="submit" value="Submit">
         </li>
     </ul>
-</form> 
-
+</form>

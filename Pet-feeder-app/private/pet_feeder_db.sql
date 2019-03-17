@@ -7,15 +7,20 @@ SET SQL_SAFE_UPDATES = 0;
 drop table if exists Pet;
 CREATE TABLE Pet (
     pID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    type_of_pet VARCHAR(255) NOT NULL,
-    food_rec VARCHAR(255) NOT NULL,
-    food_amount FLOAT(10,7) UNSIGNED NOT NULL
+    pet_type VARCHAR(45) NOT NULL,
+    diet VARCHAR(255) NOT NULL,
+    neutering VARCHAR(255) NOT NULL,
+    health VARCHAR(255),
+    date VARCHAR(255) NOT NULL,
+    activity_level VARCHAR(255) NOT NULL,
+    sex VARCHAR(255) NOT NULL,
+    food_amount FLOAT(10 , 7 ) UNSIGNED NOT NULL
 )  AUTO_INCREMENT=5001;
 
 drop table if exists pet_owner;
 CREATE TABLE pet_owner (
     oID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    pet_id INT default '0',
+    pet_id INT,
     email VARCHAR(45) NOT NULL,
     own_password VARCHAR(255) NOT NULL,
      FOREIGN KEY (pet_id)
@@ -130,12 +135,3 @@ CREATE TABLE diet_tag_map (
         REFERENCES tags (tagID)
 );
 
-DROP TABLE IF EXISTS Dog_Food_table;
-CREATE TABLE Dog_Food_table (
-    Age INT,
-    Body_type VARCHAR(45),
-    High_activity FLOAT(15 , 12 ),
-    Low_activity FLOAT(15 , 12 ),
-    Normal_activity FLOAT(15 , 12 ),
-    diet_type VARCHAR(45)
-);

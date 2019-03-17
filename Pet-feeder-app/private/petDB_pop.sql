@@ -20,7 +20,7 @@ VALUES
 ;
 
 INSERT INTO cat_breed
-(b_name , male_low_base, male_high_base,female_low_base, female_high_base )
+(b_NULLme , male_low_base, male_high_base,female_low_base, female_high_base )
 VALUES
 ("Regular Domestic Cat" , 8, 10, 7,10),
 ("Large Domestic Cat" , 10, 25, 10,25),
@@ -29,13 +29,13 @@ VALUES
 ("Siamese", 5, 10 , 5, 10 );
 
 INSERT INTO dog_breed
-(b_name , male_low_base, male_high_base,female_low_base, female_high_base )
+(b_NULLme , male_low_base, male_high_base,female_low_base, female_high_base )
 VALUES
 ("Affenpinscher",3175.14,4535.92,3175.14,4535.92,"small"),
 ("Afghan Hound",2679.6,27215.52,2679.6,27215.52,"large"),
 ("Airedale Terrier",2679.6,31751.4,2679.6,31751.4,"large"),
 ("Akita",45359.2,5896.96,31751.4,45359.2,"xlarge"),
-("Alaskan Malamute",NA,385.32,NA,34019.4,"large"),
+("Alaskan Malamute",NULL,385.32,NULL,34019.4,"large"),
 ("American English Coonhound",2041.64,29483.48,2041.64,29483.48,"large"),
 ("American Eskimo Dog(toy)",2721.52,4535.92,2721.52,4535.92,"small"),
 ("American Eskimo Dog (miniature)",4535.92,9071.84,4535.92,9071.84,"small"),
@@ -43,7 +43,7 @@ VALUES
 ( "American Foxhound",29483.48,31751.4,27215.52,29483.48,"large"),
 ( "American Hairless Terrier",543.104,7257.472,543.104,7257.472,"small"),
 ( "American Staffordshire Terrier",24947.56,31751.4,18143.68,24947.56,"large"),
-( "Anatolian Shepherd Dog",49895.12,68038.8,36287.36,5431.04,"xlarge"),
+( "ANULLtolian Shepherd Dog",49895.12,68038.8,36287.36,5431.04,"xlarge"),
 ( "Australian Cattle Dog",15875.72,2679.6,15875.72,2679.6,"medium"),
 ( "Australian Shepherd",2679.6,29483.48,18143.68,24947.56,"large"),
 ( "Australian Terrier",543.104,8164.656,543.104,8164.656,"small"),
@@ -78,8 +78,8 @@ VALUES
 ( "bull terrier",2679.6,31751.4,2679.6,31751.4,"large"),
 ( "bulldog",18143.68,2679.6,13607.76,18143.68,"medium"),
 ( "BullMastiff",49895.12,5896.96,45359.2,5431.04,"xlarge"),
-( "Cairn terrier",NA,6350.28,NA,5896.696,"small"),
-( "Canan Dog",2041.64,24947.56,15875.72,2041.64,"large"),
+( "Cairn terrier",NULL,6350.28,NULL,5896.696,"small"),
+( "CaNULLn Dog",2041.64,24947.56,15875.72,2041.64,"large"),
 ( "Cardigan Welsh Corgi",13607.76,17236.496,139.8,1542.128,"medium"),
 ( "Cavalier King Charles Spaniel",5896.696,8164.656,5896.696,8164.656,"small"),
 ( "Cesky terrier",6350.28,1086.208,6350.28,1086.208,"medium"),
@@ -88,7 +88,7 @@ VALUES
 ( "Chine SharPei",2041.64,27215.52,2041.64,27215.52,"large"),
 ( "Chinok",24947.56,40823.28,2679.6,29483.48,"large"),
 ( "Chow Chow",2041.64,31751.4,2041.64,31751.4,"large"),
-( "Cirnechi del Etna",979.024,1793.392,71.064,979.024,"medium"),
+( "Cirnechi del EtNULL",979.024,1793.392,71.064,979.024,"medium"),
 ( "Collie",27215.52,34019.4,2679.6,29483.48,"large"),
 ( "Coton de Tulear",4082.328,6803.8,3628.736,5896.696,"small"),
 ( "Dachshunds(standard)",7257.472,14514.94,7257.472,14514.94,"medium"),
@@ -96,7 +96,7 @@ VALUES
 ( "Dalmatian",2041.64,31751.4,2041.64,31751.4,"large"),
 ( "Dandie Dinmont terrier",8164.656,1086.208,8164.656,1086.208,"medium"),
 ( "Doberman Pinscher",34019.4,45359.2,27215.52,40823.28,"large"),
-( "Dogue de Bordeaux",NA,5896.96,NA,5431.04,"xlarge"),
+( "Dogue de Bordeaux",NULL,5896.96,NULL,5431.04,"xlarge"),
 ( "English Foxhound",27215.52,34019.4,27215.52,34019.4,"large"),
 ( "English Toy Spaniel",3628.736,6350.28,3628.736,6350.28,"small"),
 ( "Entlebucher Mountain Dog",24947.56,29483.48,24947.56,29483.48,"large"),
@@ -107,7 +107,7 @@ VALUES
 ( "French bulldog",979.024,1270.576,979.024,1270.576,"medium"),
 ( "German Pinscher",139.8,2041.64,139.8,2041.64,"medium"),
 ( "German Shepherd Dog",29483.48,40823.28,2679.6,31751.4,"large"),
-( "Giant Schnauzer",27215.52,385.32,24947.56,34019.4,"large"),
+( "Giant SchNULLuzer",27215.52,385.32,24947.56,34019.4,"large"),
 ( "Glen of Imal terrier",14514.94,18143.68,14514.94,18143.68,"medium"),
 ( "Great Dane",63502.8,79378.6,49895.12,63502.8,"xlarge"),
 ( "Great Pyrenese",45359.2,5896.96,385.32,45359.2,"xlarge"),
@@ -137,7 +137,7 @@ VALUES
 (" Miniature American Shepherd",9071.84,18143.68,9071.84,18143.68,"medium"),
 (" Miniature Bull terrier",8164.656,1270.576,8164.656,1270.576,"medium"),
 (" Miniature Pinscher",3628.736,4535.92,3628.736,4535.92,"small"),
-(" Miniature Schnauzer",4989.512,9071.84,4989.512,9071.84,"small"),
+(" Miniature SchNULLuzer",4989.512,9071.84,4989.512,9071.84,"small"),
 (" Neapolitan Mastiff",61234.92,68038.8,43091.24,49895.12,"xlarge"),
 (" Newfoundland",5896.96,68038.8,45359.2,5431.04,"xlarge"),
 (" Norfolk terrier",4989.512,543.104,4989.512,543.104,"small"),
@@ -207,10 +207,10 @@ VALUES
 (" Spaniels (Sussex)",15875.72,2041.64,15875.72,2041.64,"medium"),
 (" Spaniels (Welsh Springer)",18143.68,24947.56,15875.72,2679.6,"large"),
 (" Spanish Water Dog",18143.68,26.08,14061.352,18143.68,"medium"),
-(" Spinoni Italiani",NA,25401.152,NA,25401.152,"large"),
-(" St. Bernard",63502.8,81646.56,5431.04,63502.8,"xlarge"),
+(" Spinoni Italiani",NULL,25401.152,NULL,25401.152,"large"),
+(" St. BerNULLrd",63502.8,81646.56,5431.04,63502.8,"xlarge"),
 (" Staffordshire Bull terrier",1270.576,17236.496,1086.208,1542.128,"medium"),
-(" Standard Schnauzer",15875.72,2679.6,13607.76,2041.64,"medium"),
+(" Standard SchNULLuzer",15875.72,2679.6,13607.76,2041.64,"medium"),
 (" Swedish Valhund",9071.84,15875.72,9071.84,15875.72,"medium"),
 (" Tibetan Mastiff",40823.28,68038.8,31751.4,5431.04,"xlarge"),
 (" Tibetan terrier",8164.656,13607.76,7257.472,1270.576,"medium"),
@@ -236,11 +236,11 @@ VALUES
 ("Low activity");
 
 insert into health
-(health_name, active, inactive)
+(health_NULLme, active, iNULLctive)
 VALUES 
 ("Kidney disease", null, null),
-("Pregnant 0-5wks", 1.3, 1.2),
-("Pregnant 5+wks)", 1.3, 1.2),
+("PregNULLnt 0-5wks", 1.3, 1.2),
+("PregNULLnt 5+wks)", 1.3, 1.2),
 ("Nursing 1-3wks", 1.4,1.3),
 ("Nursing 3+wks", 1.6,1.5 ),
 ("Heart condition",null, null),
@@ -251,7 +251,7 @@ VALUES
 ("Underweight", 1.33, 1.5);
 
 insert into diet
-(diet_name)
+(diet_NULLme)
 VALUES
 ("raw"),
 ("raw grain free"),
@@ -263,7 +263,7 @@ VALUES
 ("wet grain free"),
 ("wet limited");
 
-Insert into tags(tag_name)
+Insert into tags(tag_NULLme)
 VALUES
 ("raw"),
 ("grain free"),
@@ -285,7 +285,7 @@ VALUES
 ("cat"),
 ("joint"),
 ("large breed"),
-("pregnant"),
+("pregNULLnt"),
 ("nursing");
 
 insert into dog_adult_diet
@@ -404,39 +404,39 @@ insert into dog_senior_diet
 insert into dog_pup_diet
 (size,body_weight, Age_2mo, Age_3_6mo , Age6_12mo , Age_12_more,Diet)
 VALUES
-("toy",2000,0.025,0.029125,NA,NA,"dry"),
-("small",5000,0.0186,0.02275,NA,NA,"dry"),
+("toy",2000,0.025,0.029125,NULL,NULL,"dry"),
+("small",5000,0.0186,0.02275,NULL,NULL,"dry"),
 ("medium",10000,0.0154,0.0189,0.018,0.0162,"dry"),
 ("medium",15000,0.0143333333333333,0.0185833333333333,0.0165333333333333,0.0148,"dry"),
 ("medium",25000,0.0102,0.0138,0.0134033333333333,0.01279,"dry"),
 ("large",30000,0.0102,0.0140541666666667,0.0135458333333333,0.0122,"dry"),
 ("large",35000,0.00917142857142857,0.0133642857142857,0.013375,0.0120214285714286,"dry"),
 ("large",40000,0.00885,0.012890625,0.012909375,0.011525,"dry"),
-("large",45000,0.00865555555555556,0.0127222222222222,NA,NA,"dry"),
+("large",45000,0.00865555555555556,0.0127222222222222,NULL,NULL,"dry"),
 ("xlarge",50000,0.0127222222222222,0.01281,0.0116666666666667,0.01062,"dry"),
-("xlarge",55000,0.00814545454545455,0.0117272727272727,NA,NA,"dry"),
+("xlarge",55000,0.00814545454545455,0.0117272727272727,NULL,NULL,"dry"),
 ("xlarge",60000,0.0117272727272727,0.0122083333333333,0.0114444444444444,0.0103111111111111,"dry"),
-("xlarge",65000,0.00744615384615385,0.0102769230769231,NA,NA,"dry"),
+("xlarge",65000,0.00744615384615385,0.0102769230769231,NULL,NULL,"dry"),
 ("xlarge",70000,0.0102769230769231,0.0114809523809524,0.0112190476190476,0.0101952380952381,"dry"),
-("xlarge",75000,0.00712,0.00981333333333333,NA,NA,"dry"),
+("xlarge",75000,0.00712,0.00981333333333333,NULL,NULL,"dry"),
 ("xlarge",80000,0.00981333333333333,0.010665625,0.0108208333333333,0.00966875,"dry"),
 ("xlarge",85000,0.00684705882352941,0.0103305555555556,0.0104814814814815,0.00937777777777778,"dry"),
 ("xlarge",90000,0.0084705882352941,0.0103305555555556,0.0104814814814815,0.00937777777777778,"dry"),
-("toy",2000,0.026,0.030125,NA,NA,"dry grain free"),
-("small",5000,0.0196,0.02375,NA,NA,"dry grain free"),
+("toy",2000,0.026,0.030125,NULL,NULL,"dry grain free"),
+("small",5000,0.0196,0.02375,NULL,NULL,"dry grain free"),
 ("medium",10000,0.0164,0.0199,"0.019","0.0172","dry grain free"),
 ("medium",15000,0.0153333333333,0.01958333333333,0.0175333,0.0158,"dry grain free"),
 ("medium",25000,0.0112,0.0148,0.0144033333333333,0.01379,"dry grain free"),
 ("large",30000,0.0112,0.0150541666666667,0.0145458333333333,0.0132,"dry grain free"),
 ("large",35000,0.0101714285714286,0.0143642857142857,0.014375,0.0130214285714286,"dry grain free"),
 ("large",40000,0.00985,0.013890625,0.013909375,0.012525,"dry grain free"),
-("large",45000,0.0096555556,0.013722222,NA,NA,"dry grain free"),
+("large",45000,0.0096555556,0.013722222,NULL,NULL,"dry grain free"),
 ("xlarge",50000,0.0137222,0.01381,0.012666667,0.01162,"dry grain free"),
-("xlarge",55000,0.0091454545454546,0.012727,NA,NA,"dry grain free"),
+("xlarge",55000,0.0091454545454546,0.012727,NULL,NULL,"dry grain free"),
 ("xlarge",60000,0.012727273,0.01320833,0.012444,0.011311,"dry grain free"),
-("xlarge",65000,0.00844615384615385,0.0112769230769231,NA,NA,"dry grain free"),
+("xlarge",65000,0.00844615384615385,0.0112769230769231,NULL,NULL,"dry grain free"),
 ("xlarge",70000,0.0112769230769231,0.0124809523809524,0.0122190476190476,0.0111952380952381,"dry grain free"),
-("xlarge",75000,0.00812,0.010813,NA,NA,"dry grain free"),
+("xlarge",75000,0.00812,0.010813,NULL,NULL,"dry grain free"),
 ("xlarge",80000,0.0108133333,0.011665625,0.0118208333333333,0.01066875,"dry grain free"),
 ("xlarge",85000,0.00784705882352941,0.0113305556,0.0114814814814815,0.010378,"dry grain free"),
 ("xlarge",90000,0.0094705882352941,0.0113305556,0.0114814814814815,0.010378,"dry grain free"),
@@ -463,4 +463,4 @@ VALUES
 
 
 INSERT INTO diet_tag_map (dID, tagID) 
-SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_name LIKE CONCAT('%', tags.tag_name, '%') ;
+SELECT dID, tagID FROM diet INNER JOIN tags ON diet.diet_NULLme LIKE CONCAT('%', tags.tag_NULLme, '%') ;

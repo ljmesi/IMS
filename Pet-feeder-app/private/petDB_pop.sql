@@ -239,8 +239,8 @@ insert into health
 (health_name, active, inactive)
 VALUES 
 ("Kidney disease", null, null),
-("PregNULLnt 0-5wks", 1.3, 1.2),
-("PregNULLnt 5+wks)", 1.3, 1.2),
+("Pregnant 0-5wks", 1.3, 1.2),
+("Pregnant 5+wks)", 1.3, 1.2),
 ("Nursing 1-3wks", 1.4,1.3),
 ("Nursing 3+wks", 1.6,1.5 ),
 ("Heart condition",null, null),

@@ -20,7 +20,7 @@ VALUES
 ;
 
 INSERT INTO cat_breed
-(b_NULLme , male_low_base, male_high_base,female_low_base, female_high_base )
+(b_name , male_low_base, male_high_base,female_low_base, female_high_base )
 VALUES
 ("Regular Domestic Cat" , 8, 10, 7,10),
 ("Large Domestic Cat" , 10, 25, 10,25),
@@ -29,7 +29,7 @@ VALUES
 ("Siamese", 5, 10 , 5, 10 );
 
 INSERT INTO dog_breed
-(b_NULLme , male_low_base, male_high_base,female_low_base, female_high_base )
+(b_name , male_low_base, male_high_base,female_low_base, female_high_base )
 VALUES
 ("Affenpinscher",3175.14,4535.92,3175.14,4535.92,"small"),
 ("Afghan Hound",2679.6,27215.52,2679.6,27215.52,"large"),
@@ -236,7 +236,7 @@ VALUES
 ("Low activity");
 
 insert into health
-(health_NULLme, active, iNULLctive)
+(health_name, active, inactive)
 VALUES 
 ("Kidney disease", null, null),
 ("PregNULLnt 0-5wks", 1.3, 1.2),
@@ -251,7 +251,7 @@ VALUES
 ("Underweight", 1.33, 1.5);
 
 insert into diet
-(diet_NULLme)
+(diet_name)
 VALUES
 ("raw"),
 ("raw grain free"),
@@ -263,7 +263,7 @@ VALUES
 ("wet grain free"),
 ("wet limited");
 
-Insert into tags(tag_NULLme)
+Insert into tags(tag_name)
 VALUES
 ("raw"),
 ("grain free"),

@@ -27,7 +27,6 @@
         <li>
             <label for="diet">Diet</label>
             <select required name="diet" id="diet">
-<<<<<<< HEAD
                     <option value="">Select</option>
                     <option value="raw">Raw</option>
                     <option value="raw grain free">Raw grain free</option>
@@ -39,27 +38,6 @@
                     <option value="wet grain free">Wet grain free</option>
                     <!--<option value="wet limited diet">Wet limited diet</option>-->
                     <!--<option value="other diet">Other diet</option>-->
-=======
-                <option value="">Select</option>
-                <optgroup label="Raw">
-                  <option value="raw">Raw</option>
-                    <option value="raw_grain_free">Raw grain free</option>
-                    <option value="raw_limited_diet">Raw limited diet</option>
-                </optgroup>
-                <optgroup label="Dry">
-                  <option value="dry">Dry</option>
-                    <option value="dry_grain_free">Dry grain free</option>
-                    <option value="dry_limited_diet">Dry limited diet</option>
-                </optgroup>
-                <optgroup label="Wet">
-                  <option value="wet">Wet</option>
-                    <option value="wet_grain_free">Wet grain free</option>
-                    <option value="wet_limited_diet">Wet limited diet</option>
-                </optgroup>
-                <optgroup label="Other">
-                    <option value="other_diet">Other diet</option>
-                </optgroup>
->>>>>>> 2030e5cd7d8d181bd7993b5e46843a993f2d6fb6
             </select>
         </li>
 
@@ -112,7 +90,7 @@
         </li>
 
         <li>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit"> &nbsp; <input type="reset" name="reset" value="Clear">
         </li>
     </ul>
 </form>

@@ -121,6 +121,10 @@ if (isset($_POST['submit'])) {
         //recommendation page of non user displayed
         //header('Location: http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php');
         // extra infor from recommendations page of user displayed
+    }
+else 
+        die('Enter all details first');
+
     if (isLoggedIn()) {
         $pet_type = 'dog';
         $stmt_insert = $con->prepare("INSERT INTO pet (type_of_pet,food_amount) VALUES ('$pet_type','$food_rec')");
@@ -135,35 +139,41 @@ if (isset($_POST['submit'])) {
         $hist_data = $con->prepare("INSERT INTO historical_data (owner_id, type_of_pet, pet_weight, food_amount, historical_date)
         VALUES ('$owner_id','$pet_type','$weight_g','$food_rec',DATE '$date')");
         $hist_data->execute();
-        $data=mysqli_query($mysqli,"SELECT * FROM historical_data");
+        $show_data = $con->prepare("SELECT pet_weight, food_amount, historical_date FROM historical_data WHERE owner_id= ?");
+        $show_data->bind_param('i', $owner_id);
+        $show_data->execute();
+        $data_result = $show_data->get_result();
+        echo "<table border='1'>
+        <tr>
+        <th>Pet Weight</th>
+        <th>Food Amount</th>
+        <th>Historical Date</th>
+        </tr>";
+        while($row = mysqli_fetch_array($data_result))
+        {
+            echo "<tr>";
+            echo "<td>" . $row['pet_weight'] . "</td>";
+            echo "<td>" . $row['food_amount'] . "</td>";
+            echo "<td>" . $row['historical_date'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
         //echo "<button name='recom' value='Show History Data' onclick='#'>";
         //echo "</button>";
     }
-}
-else 
-    die('Enter all details first');
 ?>
-
 <h3 style="text-align: center"><?php echo ucfirst($pet_species); ?>  food recommendations</h3>
 
-<div class="flex-container-recommendation">
-<h4>Suggested Nutritional intake today</h4>
-  
-<h5>You are recommended to feed your pet with <?php echo $food_rec; ?> grams of <?php echo $diet; ?> food this day. </h5>  
-<div></div> 
+<?php if ($food_rec != 0): ?>
+    <div class="flex-container-recommendation">
+    <h4>Suggested Nutritional intake today</h4>
 
-<script>
-        var myData=[<?php 
-        while($info=mysqli_fetch_array($data))
-        echo $info['pet_weight'].','; /* We use the concatenation operator '.' to add comma delimiters after each data value. */
-        ?>];
-        <?php
-        $data=mysqli_query($mysqli,"SELECT * FROM historical_data");
-        ?>
-        var myLabels=[<?php 
-        while($info=mysqli_fetch_array($data))
-        echo '"'.$info['historical_date'].'",'; /* The concatenation operator '.' is used here to create string values from our database names. */
-        ?>];
-</script>
+    <h5>You are recommended to feed your pet with <?php echo $food_rec; ?> grams of <?php echo $diet; ?> food this day. </h5>  
+    <div></div> 
+
+<?php else: ?>
+    <h5>Sorry, We couldn't find anything that matched your query.</h5>
+
+<?php endif ?>
 
 <?php include(SHARED_PATH . '/footer.php'); ?>

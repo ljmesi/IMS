@@ -49,7 +49,7 @@
                 <li><a href="http://localhost/IMS/Pet-feeder-app/index.php" title="link to sign in page">Home</a></li>
                 <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/sign-up.php" title="link to sign up page">Register</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php" title="link to log out page">Login</a></li>
+                <li><a href="http://localhost/IMS/Pet-feeder-app/public/pages/loggedin.php" title="link to log out page">Login/Profile</a></li>
               </ul>
             </li>
           </ul>

@@ -68,7 +68,11 @@ CREATE TABLE dog_breed (
     male_high_base INT UNSIGNED NOT NULL,
     female_low_base INT UNSIGNED,
     female_high_base INT UNSIGNED NOT NULL,
+<<<<<<< HEAD
+    size VARCHAR(45) NOT NULL 
+=======
     size VARCHAR(45) NOT NULL
+>>>>>>> 2030e5cd7d8d181bd7993b5e46843a993f2d6fb6
 );
 DROP TABLE IF EXISTS dog_adult_diet ;
 CREATE TABLE dog_adult_diet (
@@ -94,9 +98,10 @@ DROP TABLE IF EXISTS dog_senior_diet ;
 CREATE TABLE dog_senior_diet (
     size VARCHAR(255) NOT NULL,
     body_weight BIGINT,
-    High_Normal_activity FLOAT(10 , 9 ),
     Low_activity FLOAT(10 , 9 ),
-    Diet VARCHAR(255) NOT NULL
+    Diet VARCHAR(255) NOT NULL,
+    Normal_activity FLOAT(10 , 9),
+    High_activity FLOAT(10 , 9)
 );
 
     

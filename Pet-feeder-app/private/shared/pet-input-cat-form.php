@@ -1,5 +1,5 @@
 <div class="post-content flex-container" itemprop="articleBody">
-    <form action="insert-logindata.php" method="post">
+    <form action="../../public/pages/recommendations-user.php?q=dog%20food" method="post">
         <ul class="flex-outer">
             <li>
                 <label for="cat_breed">Cat breed</label>

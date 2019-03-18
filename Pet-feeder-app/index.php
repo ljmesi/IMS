@@ -1,4 +1,4 @@
-<?php include_once('./private/initialise.php') ?>
+<?php include('./private/initialise.php'); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
  <!-- TODO: Remove the styling from html here and change colour to the same blue as in the header. -->

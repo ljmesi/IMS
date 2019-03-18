@@ -54,10 +54,17 @@ session_start();
         </tr>
         </table>
         <p><button id="pet-info" class="float-left submit-button">Goto Pet-input Form</button></p>
+        <p><button id="pet-wt" class="float-left submit-button">Goto Pet History</button></p>
 
         <script type="text/javascript">
             document.getElementById("pet-info").onclick = function () {
             location.href = "http://localhost/IMS/Pet-feeder-app/index.php";
+            };
+        </script>
+
+        <script type="text/javascript">
+            document.getElementById("pet-wt").onclick = function () {
+            location.href = "http://localhost/IMS/Pet-feeder-app/public/pages/test_data.php";
             };
         </script>
 

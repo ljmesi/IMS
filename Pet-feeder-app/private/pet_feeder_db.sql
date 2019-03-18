@@ -106,7 +106,8 @@ CREATE TABLE cat_breed (
     male_low_base INT UNSIGNED,
     male_high_base INT UNSIGNED NOT NULL,
     female_low_base INT UNSIGNED,
-    female_high_base INT UNSIGNED NOT NULL
+    female_high_base INT UNSIGNED NOT NULL,
+    size VARCHAR(45) NOT NULL
 );
 
 DROP TABLE IF EXISTS lifestyle ;

@@ -29,7 +29,7 @@ VALUES
 ("Siamese", 5, 10 , 5, 10 );
 
 INSERT INTO dog_breed
-(b_name , male_low_base, male_high_base,female_low_base, female_high_base )
+(b_name , male_low_base, male_high_base,female_low_base, female_high_base, size)
 VALUES
 ("Affenpinscher",3175.14,4535.92,3175.14,4535.92,"small"),
 ("Afghan Hound",2679.6,27215.52,2679.6,27215.52,"large"),
@@ -366,7 +366,7 @@ insert into dog_adult_diet
 
 
 insert into dog_senior_diet
- (size, body_weight, High_Normal_activity, Low_activity, Diet)
+(size, body_weight, Normal_activity, Low_activity, Diet)
  VALUES
 ("small",9000,0.02077778,0.01811,"dry grain free"),
 ("medium",10000,0.0188,0.0164,"dry grain free"),

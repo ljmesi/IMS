@@ -10,7 +10,6 @@
 
 <h3 style="text-align: center">Pet food recommendations</h3>
 
-
 <div class="flex-container-recommendation">
   <h4>Recommended nutritional nutritional intake today</h4>
  

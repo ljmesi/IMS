@@ -1,3 +1,7 @@
+<link href="http://localhost/IMS/Pet-feeder-app/public/sass/main.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" defer></script>
+<script src="http://localhost/IMS/Pet-feeder-app/private/js/bootstrap.min.js" defer></script>
 <?php include('./private/initialise.php'); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 

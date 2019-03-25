@@ -11,7 +11,7 @@
                 <option value="Heart condition">Heart condition</option>
                 <option value="Overweight">Overweight</option>
                 <option value="Underweight">Underweight</option>
-                <option value="Other">Other</option>
+                <option value="Other">Not Applicable</option>
             </select>
         </li>
         <li>

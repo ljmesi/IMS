@@ -5,8 +5,8 @@ if(strtolower($_POST['answer']) == $_SESSION['captcha'])
 {
     // form handler
     // initializing variables
-    $email = $_POST['emailaddr'];
-    $password = $_POST['psw1'];
+    $email = mysql_escape_string($_POST['emailaddr']);
+    $password = mysql_escape_string($_POST['psw1']);
     $errors = array(); 
 
     // connect to the database
@@ -28,7 +28,7 @@ if(strtolower($_POST['answer']) == $_SESSION['captcha'])
     if (count($errors) == 0) {
         //encrypt the password before saving in the database
   	    $password_hash = md5($password);
-        $query = "INSERT INTO pet_owner (email, own_password) VALUES('$email', '$password_hash')";
+        $query = "INSERT INTO pet_owner (email, own_password) VALUES('".mysql_escape_string($email)."', '".mysql_escape_string($password_hash)."')";
   	    mysqli_query($db, $query);
   	    $_SESSION['email'] = $email;
   	    $_SESSION['success'] = "You are now logged in";

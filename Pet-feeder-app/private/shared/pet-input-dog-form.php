@@ -99,7 +99,7 @@
                     <option value="Kerry Blue Terrier"> Kerry Blue Terrier</option>
                     <option value="Komondorok"> Komondorok</option>
                     <option value="Kuvazok"> Kuvazok</option>
-                    <option value="Lagotti Romagnoli"> Lagotti Romagnoli</option>
+                    <option value="Lagoti Romagnoli"> Lagotti Romagnoli</option>
                     <option value="Lakeland Terrier"> Lakeland Terrier</option>
                     <option value="Leonberger"> Leonberger</option>
                     <option value="Lhasa Apso"> Lhasa Apso</option>

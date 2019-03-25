@@ -3,7 +3,7 @@
 <?php include(SHARED_PATH . '/header.php');?>
 
 <?php
-session_start();
+// session_start();
 ?>
 
 <head>
@@ -24,6 +24,7 @@ session_start();
 </head>
 
 <?php
+session_start();
 if (isLoggedIn()){
 $con = new mysqli('localhost', 'root', '', 'pet_feeder');
 

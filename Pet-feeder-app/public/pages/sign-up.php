@@ -3,122 +3,150 @@
 <html>
 <head>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <style>
 
-/*form {
-    border: 3px solid #f1f1f1;
-    margin: 10px 10px;
-}*/
-
-input[type=email], input[type=password] {
-    width: 12em;
+<style>
+input[type=email], input[type=password]{
+    width: 13em;
     height: 2.55em;
     padding: 5px;
     margin: 10px 0px 10px 0;
     border-radius: 7px;
     background-color: #fdedec;
     order: 1;
-    /*width: 98%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;*/
 }
-
 input[type=submit]{
     width: 70px;
     height: 29px;
     font-size: 12px;
     font: bold 13px arial;
 }
-/*button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}*/
-
 button:hover {
-    opacity: 0.5; /* 0.8; */
+    opacity: 0.5;
 }
-
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
 }
-
- 
 img {
-  width: 90px;
+  width: 80px;
 }
-
-/*
-imgcontainer {
+#wrap .statusmsg{
     text-align: center;
-    margin: 24px 0 12px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #cc4400;
+    padding: 3px;
+    background: #fdedec;
+    border: 1px solid #DFDFDF;
 }
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}*/
-
-.container {
-    padding: 16px;
-    width: 450px;
-    height: 300px;
-    margin: 24px 0 12px 0;
-    margin-left: 450px;
-}
-
-/*span.psw {
-    float: right;
-    padding-top: 16px;
-}*/
-
-/* Change styles for span and cancel button on extra small screens */
-/*@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}*/
 </style>
 </head>
 
 <body>
-    <h2 align="center" color="red">New User with Us? Sign Up Here!!!</h2>
-    <div class="container"> 
-        <form action='captcha-validate.php' method="post" autocomplete="off">
-        <label><b>Email Address</b></label>
-        <input type="email" placeholder="Enter Email address" name="emailaddr" required>
-        <br>
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" 
-        required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="psw1" 
+<div id="wrap">
+<?php
+session_start();
+if(isset($_POST['emailaddr']) && !empty($_POST['emailaddr']) AND (strtolower($_POST['answer']) == $_SESSION['captcha']))
+{
+    $db = mysqli_connect('localhost', 'root', '', 'pet_feeder');
+    $email = mysqli_escape_string($db,$_POST['emailaddr']);
+    $password = mysqli_escape_string($db,$_POST['psw1']);
+    $errors = array();
+
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
+        // Return Error - Invalid Email
+        $msg = 'The email you have entered is invalid, please try again.';
+    }
+    else if(!preg_match('/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,}$/',$password))
+    {
+        // Return error - password does not follow policy
+        $msg = 'The password must contain at least 8 characters, including one each of uppercase, lowercase letters, numbers and special characters.';
+    }
+    else if($_POST['psw1'] != $_POST['psw2'])
+    {
+        // confirm password do not match
+        $msg = 'The two passwords entered by you do not match.';
+    }
+    else
+    {
+        // Return Success - Valid Email
+        // first check the database to make sure 
+        // a user does not already exist with the same username and/or email
+        $owner_check_query = "SELECT 'email', 'own_password' FROM pet_owner WHERE email='$email' LIMIT 1";
+        $result = mysqli_query($db, $owner_check_query);
+        $owner = mysqli_fetch_assoc($result);
+  
+        if ($owner) 
+        { // if user exists
+        if ($owner['email'] === $email) 
+        {
+        array_push($errors, "Owner email id already exists with our website");
+        }
+        }
+        // Finally, register user if there are no errors in the form
+        if (count($errors) == 0) {
+            //encrypt the password before saving in the database
+  	        $password_hash = md5($password);
+            $query = "INSERT INTO pet_owner (email, own_password) VALUES('$email', '$password_hash')";
+            mysqli_query($db, $query);
+            $_SESSION['email'] = $email;
+  	        $_SESSION['success'] = "You are now logged in";
+        }
+    unset($_SESSION['captcha']);
+    $msg = 'Your account has been made, <br /> please click on the following link to access your profile.';
+    }
+}
+?>
+
+<h3 align="center" color="red">New User with Us? Sign Up Here!!!</h3>
+
+<?php
+ if(isset($msg)){  // Check if $msg is not empty
+    echo '<div class="statusmsg">'.$msg.'</div>'; 
+    // Display message and wrap it with a div with the class "statusmsg".
+    if($msg == 'Your account has been made, <br /> please click on the following link to access your profile.')
+    echo "<div class='statusmsg'><a href='loggedin.php'>Profile</a></div>";
+    unset($msg);
+}
+?>
+
+        <form action='' method="post" autocomplete="off">
+        <table align='center'>
+        <tr>
+        <th>Email Address</th>
+        <td><input type="email" placeholder="Enter Email address" name="emailaddr" required></td>
+        </tr>
+        <tr>
+        <th>Password</th>
+        <td><input type="password" placeholder="Enter Password" 
+        required name="psw1" 
         onchange="form.psw2.pattern = RegExp.escape(this.value);" 
         data-toggle="tooltip" 
-        title="The password must contain at least 6 characters, including UPPER and lowercase letters and numbers">
-        <br>
-        <label><b>Confirm Password</b></label>
-        <input type="password" placeholder="Enter the same password" required name="psw2">
-        <br>
-        <img src="captcha.php" id="captcha">&nbsp;
-        <input type="button" id="reload" value="Reload Captcha"/>
-        <br>
-        <input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/>
-        <br>
-        <input type="submit" value="Sign Up"><br><br>
-        <label>Already a member?</label>&nbsp;<a href="sign-in.php">Sign in</a>
+        title="The password must contain at least 8 characters, including uppercase, lowercase letters, numbers and special characters."></td>
+        </tr>
+        <tr>
+        <th>Confirm Password</th>
+        <td><input type="password" placeholder="Enter the same password" required name="psw2"></td>
+        </tr>
+        <tr>
+        <td align='center'><img src="captcha.php" id="captcha"></td>
+        <td><input type="text" name="answer" placeholder="Enter captcha here" maxlength="10"/></td>
+        </tr>
+        <tr>
+        <td align='center'><input type="button" id="reload" value="Reload"/></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td><input type="submit" value="Sign Up"></td>
+        </tr>
+        <tr>
+        <td><br><label>Already a member?</label>&nbsp;<a href="sign-in.php">Sign in</a></td>
+        </tr>
+        </table>
         </form>
+    </div>
         <script>
             $(function () { // Handler for .ready() called.
                 $('#reload').click(function () {
@@ -126,9 +154,7 @@ img.avatar {
                 });
             });
         </script>
-    </div>
 </body>
-
 </html>
 
 <?php include(SHARED_PATH . '/footer.php'); ?>

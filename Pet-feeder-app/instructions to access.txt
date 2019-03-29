@@ -1,0 +1,22 @@
+since the website is not live, one should copy the contents of the whole folder IMS into the www folder of wamp folder after installing wamp server on the local computer.
+Turn on wamp server by simply running its icon from start folder or shortcut that was created on desktop during installation, ensuring all its services are up and running.
+To access the website, go to any web browser and type in http://localhost/IMS/Pet-feeder-app/index.php
+This should land you at the home page of the website.
+
+Once on the home page, you can either go directly to search for food recommendation for your pet by hovering the mouse and clicking on the picture of either the dog or cat depending on the type pf pet you wish to find information for.
+Or you can login (if you are a member) and then search for food recommendation. You can also sign up later if you'd like to become a member sometime later during the website tour.
+
+When you click on either the dog or cat picture, it will land you onto http://localhost/IMS/Pet-feeder-app/public/pages/pet-input-dog.php or http://localhost/IMS/Pet-feeder-app/public/pages/pet-input-cat.php
+These correspond to the forms where a user can submit input data to receivepet food recommendation.
+The code will be found in the IMS folder.
+
+Once a user clicks on the Login/Profile option from the Home dropdown menu on the top right corner, the user will be directed to either the login page or the profile depending on whether he/she is already logged in or not.
+
+If you are logged in, you can then access your profile section and can also track your pet's weight and food history in a tabular form. 
+You can also change your password if you wish to do that.
+
+Clicking on the Log Out option of the Home drop down will land you to the log-out.php page where the session will be closed and you will be redirected to the sign-in page.
+
+The results_cat_form.php and results_dog_form.php consist of the code that's behind display of food recommendation for the pet.
+
+The screenshot of the same is attached in the project report.
